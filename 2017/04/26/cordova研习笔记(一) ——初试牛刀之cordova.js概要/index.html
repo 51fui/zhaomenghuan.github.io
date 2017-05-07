@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1945738-78cb7f353967a07e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1945738-e718f512d81ccd41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1945738-e4a0597e40ed7d32.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-05-03T16:13:52.118Z">
+<meta property="og:updated_time" content="2017-05-07T12:21:31.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cordova研习笔记(一) —— 初试牛刀之cordova.js概要">
 <meta name="twitter:description" content="前言来新公司的第一个任务，研究hybrid App中间层实现原理，做中间层插件开发。这个任务挺有意思，也很有挑战性，之前在DCloud虽然做过5+ App开发，但是中间层的东西确实涉及不多。本系列文章属于系列开篇cordova学习笔记，本文主要是从零开始搭建一个cordova工程，并了解cordova开发的基本内容。 创建第一个AppApache Cordova是一个开源的移动开发框架。允许你用标">
@@ -228,7 +228,7 @@
 </ul>
 <p><strong>Example：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cordova create hello-cordova io.zhaomenghuan HelloCordova</div></pre></td></tr></table></figure></p>
 <p>这将会为你的cordova应用创造必须的目录。默认情况下，cordova create命令生成基于web的应用程序的骨骼，项目的主页是 www/index.html 文件。</p>
-{% image http://upload-images.jianshu.io/upload_images/1945738-d58f8fe035702f11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '图为创建好的项目' '' %}
+{% image http://upload-images.jianshu.io/upload_images/1945738-d58f8fe035702f11.png '图为创建好的项目' '' %}
 <p><strong>3.添加平台</strong></p>
 <p>所有后续命令都需要在项目目录或者项目目录的任何子目录运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd hello-cordova</div></pre></td></tr></table></figure></p>
 <p>给你的App添加目标平台。我们将会添加<code>ios</code>和<code>android</code>平台，并确保他们保存在了config.xml中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cordova platform add ios --save</div><div class="line">cordova platform add android --save</div></pre></td></tr></table></figure></p>
@@ -437,7 +437,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-05-03T16:13:52.118Z" itemprop="dateUpdated">2017-05-04 00:13:52</time>
+    最后更新时间：<time datetime="2017-05-07T12:21:31.941Z" itemprop="dateUpdated">2017-05-07 20:21:31</time>
 </span><br>
 
 
@@ -482,7 +482,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zhaomenghuan.github.io/2017/04/26/cordova研习笔记(一) ——初试牛刀之cordova.js概要/&title=《cordova研习笔记(一) —— 初试牛刀之cordova.js概要》 — 小青年博客&source=看似寻常最奇崛，成如容易却艰辛。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zhaomenghuan.github.io/2017/04/26/cordova研习笔记(一) ——初试牛刀之cordova.js概要/&title=《cordova研习笔记(一) —— 初试牛刀之cordova.js概要》 — 小青年博客&source=小青年,小青年博客,前端开发,android,技术宅,菜鸟教程,一个神奇的博客。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -623,7 +623,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zhaomenghuan.github.io/2017/04/26/cordova研习笔记(一) ——初试牛刀之cordova.js概要/&title=《cordova研习笔记(一) —— 初试牛刀之cordova.js概要》 — 小青年博客&source=看似寻常最奇崛，成如容易却艰辛。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zhaomenghuan.github.io/2017/04/26/cordova研习笔记(一) ——初试牛刀之cordova.js概要/&title=《cordova研习笔记(一) —— 初试牛刀之cordova.js概要》 — 小青年博客&source=小青年,小青年博客,前端开发,android,技术宅,菜鸟教程,一个神奇的博客。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -714,6 +714,19 @@ lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261860158&web_id=1261860158')
 </script>
 
 
+
+<script type="text/javascript">
+    (function(p,u,s,h){
+        p._pcq=p._pcq||[];
+        p._pcq.push(['_currentTime',Date.now()]);
+        s=u.createElement('script');
+        s.type='text/javascript';
+        s.async=true;
+        s.src='https://cdn.pushcrew.com/js/84781173feeb9c46759523538d7dbfe0.js';
+        h=u.getElementsByTagName('script')[0];
+        h.parentNode.insertBefore(s,h);
+    })(window,document);
+</script>
 
 </body>
 </html>
