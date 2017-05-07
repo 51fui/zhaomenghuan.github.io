@@ -3667,7 +3667,7 @@
     <link href="http://zhaomenghuan.github.io/2016/03/28/%E5%9F%BA%E4%BA%8EJavaScript%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E5%85%A5%E9%97%A8/"/>
     <id>http://zhaomenghuan.github.io/2016/03/28/基于JavaScript的桌面应用入门/</id>
     <published>2016-03-27T16:00:00.000Z</published>
-    <updated>2017-05-04T07:03:42.528Z</updated>
+    <updated>2017-05-07T12:40:03.284Z</updated>
     
     <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>为了让自己的博客体验更好，也方便自己平时发布，打算从零开始打造一个自己的博客文章发布平台。当然在这个过程中肯定会用到一些很优秀的第三方插件，这样一方面可以减少自己的工作量，一方面可以学习一下其他优秀的工具。</p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="electron————使用web技术构建跨平台桌面应用程序"><a href="#electron————使用web技术构建跨平台桌面应用程序" class="headerlink" title="electron————使用web技术构建跨平台桌面应用程序"></a>electron————使用web技术构建跨平台桌面应用程序</h3><p>Electron是一个原本为 Atom 编辑器设计的，跨平台的应用外壳（Application Shell），它将 Chromium 和 Node.js 的事件循环整合到了一起，同时提供了一些与原生系统交互的 API。</p>
@@ -3755,11 +3755,11 @@
       <category term="node学习之路" scheme="http://zhaomenghuan.github.io/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
+      <category term="vue.js" scheme="http://zhaomenghuan.github.io/tags/vue-js/"/>
+    
       <category term="electron" scheme="http://zhaomenghuan.github.io/tags/electron/"/>
     
-      <category term="markdownv" scheme="http://zhaomenghuan.github.io/tags/markdownv/"/>
-    
-      <category term="ue.js" scheme="http://zhaomenghuan.github.io/tags/ue-js/"/>
+      <category term="markdown" scheme="http://zhaomenghuan.github.io/tags/markdown/"/>
     
   </entry>
   
