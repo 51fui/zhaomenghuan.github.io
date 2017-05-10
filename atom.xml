@@ -4,9 +4,9 @@
   <subtitle>看似寻常最奇崛，成如容易却艰辛。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://zhaomenghuan.info/"/>
+  <link href="http://wwww.zhaomenghuan.info/"/>
   <updated>2017-05-08T05:43:46.652Z</updated>
-  <id>http://zhaomenghuan.info/</id>
+  <id>http://wwww.zhaomenghuan.info/</id>
   
   <author>
     <name>赵梦欢</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>cordova研习笔记(二) —— cordova 6.X 源码解读</title>
-    <link href="http://zhaomenghuan.info/2017/05/04/cordova%E7%A0%94%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%BA%8C)%E2%80%94%E2%80%94cordova%206.X%20%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
-    <id>http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/</id>
+    <link href="http://wwww.zhaomenghuan.info/2017/05/04/cordova%E7%A0%94%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%BA%8C)%E2%80%94%E2%80%94cordova%206.X%20%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
+    <id>http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/</id>
     <published>2017-05-03T16:00:00.000Z</published>
     <updated>2017-05-08T05:43:46.652Z</updated>
     
@@ -111,19 +111,19 @@
     
     </summary>
     
-      <category term="hybrid App深入浅出研究" scheme="http://zhaomenghuan.info/categories/hybrid-App%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%A0%94%E7%A9%B6/"/>
+      <category term="hybrid App深入浅出研究" scheme="http://wwww.zhaomenghuan.info/categories/hybrid-App%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%A0%94%E7%A9%B6/"/>
     
     
-      <category term="cordova" scheme="http://zhaomenghuan.info/tags/cordova/"/>
+      <category term="cordova" scheme="http://wwww.zhaomenghuan.info/tags/cordova/"/>
     
-      <category term="hybrid App" scheme="http://zhaomenghuan.info/tags/hybrid-App/"/>
+      <category term="hybrid App" scheme="http://wwww.zhaomenghuan.info/tags/hybrid-App/"/>
     
   </entry>
   
   <entry>
     <title>cordova研习笔记(一) —— 初试牛刀之cordova.js概要</title>
-    <link href="http://zhaomenghuan.info/2017/04/26/cordova%E7%A0%94%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20%E2%80%94%E2%80%94%E5%88%9D%E8%AF%95%E7%89%9B%E5%88%80%E4%B9%8Bcordova.js%E6%A6%82%E8%A6%81/"/>
-    <id>http://zhaomenghuan.info/2017/04/26/cordova研习笔记(一) ——初试牛刀之cordova.js概要/</id>
+    <link href="http://wwww.zhaomenghuan.info/2017/04/26/cordova%E7%A0%94%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20%E2%80%94%E2%80%94%E5%88%9D%E8%AF%95%E7%89%9B%E5%88%80%E4%B9%8Bcordova.js%E6%A6%82%E8%A6%81/"/>
+    <id>http://wwww.zhaomenghuan.info/2017/04/26/cordova研习笔记(一) ——初试牛刀之cordova.js概要/</id>
     <published>2017-04-25T16:00:00.000Z</published>
     <updated>2017-05-07T12:21:31.941Z</updated>
     
@@ -365,19 +365,19 @@
     
     </summary>
     
-      <category term="hybrid App深入浅出研究" scheme="http://zhaomenghuan.info/categories/hybrid-App%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%A0%94%E7%A9%B6/"/>
+      <category term="hybrid App深入浅出研究" scheme="http://wwww.zhaomenghuan.info/categories/hybrid-App%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%A0%94%E7%A9%B6/"/>
     
     
-      <category term="cordova" scheme="http://zhaomenghuan.info/tags/cordova/"/>
+      <category term="cordova" scheme="http://wwww.zhaomenghuan.info/tags/cordova/"/>
     
-      <category term="hybrid App" scheme="http://zhaomenghuan.info/tags/hybrid-App/"/>
+      <category term="hybrid App" scheme="http://wwww.zhaomenghuan.info/tags/hybrid-App/"/>
     
   </entry>
   
   <entry>
     <title>node学习之路（二）—— Node.js 连接 MongoDB</title>
-    <link href="http://zhaomenghuan.info/2017/04/12/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94Node.js%20%E8%BF%9E%E6%8E%A5%20MongoDB/"/>
-    <id>http://zhaomenghuan.info/2017/04/12/node学习之路（二）—Node.js 连接 MongoDB/</id>
+    <link href="http://wwww.zhaomenghuan.info/2017/04/12/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94Node.js%20%E8%BF%9E%E6%8E%A5%20MongoDB/"/>
+    <id>http://wwww.zhaomenghuan.info/2017/04/12/node学习之路（二）—Node.js 连接 MongoDB/</id>
     <published>2017-04-11T16:00:00.000Z</published>
     <updated>2017-05-03T16:16:20.837Z</updated>
     
@@ -934,21 +934,21 @@
     
     </summary>
     
-      <category term="node学习之路" scheme="http://zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <category term="node学习之路" scheme="http://wwww.zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="JavaScript" scheme="http://zhaomenghuan.info/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wwww.zhaomenghuan.info/tags/JavaScript/"/>
     
-      <category term="nodejs" scheme="http://zhaomenghuan.info/tags/nodejs/"/>
+      <category term="nodejs" scheme="http://wwww.zhaomenghuan.info/tags/nodejs/"/>
     
-      <category term="mongodb" scheme="http://zhaomenghuan.info/tags/mongodb/"/>
+      <category term="mongodb" scheme="http://wwww.zhaomenghuan.info/tags/mongodb/"/>
     
   </entry>
   
   <entry>
     <title>Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用</title>
-    <link href="http://zhaomenghuan.info/2017/04/01/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8Egulp%E6%9E%84%E5%BB%BAAngular%E5%8D%95%E9%A1%B5%E9%9D%A2%E5%BA%94%E7%94%A8/"/>
-    <id>http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/</id>
+    <link href="http://wwww.zhaomenghuan.info/2017/04/01/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8Egulp%E6%9E%84%E5%BB%BAAngular%E5%8D%95%E9%A1%B5%E9%9D%A2%E5%BA%94%E7%94%A8/"/>
+    <id>http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/</id>
     <published>2017-03-31T16:00:00.000Z</published>
     <updated>2017-05-03T16:13:59.547Z</updated>
     
@@ -1102,38 +1102,38 @@
     
     </summary>
     
-      <category term="Angular系列学习笔记" scheme="http://zhaomenghuan.info/categories/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Angular系列学习笔记" scheme="http://wwww.zhaomenghuan.info/categories/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="gulp" scheme="http://zhaomenghuan.info/tags/gulp/"/>
+      <category term="angular" scheme="http://wwww.zhaomenghuan.info/tags/angular/"/>
     
-      <category term="angular" scheme="http://zhaomenghuan.info/tags/angular/"/>
+      <category term="gulp" scheme="http://wwww.zhaomenghuan.info/tags/gulp/"/>
     
-      <category term="angular-ui-router" scheme="http://zhaomenghuan.info/tags/angular-ui-router/"/>
+      <category term="angular-ui-router" scheme="http://wwww.zhaomenghuan.info/tags/angular-ui-router/"/>
     
-      <category term="angular-material" scheme="http://zhaomenghuan.info/tags/angular-material/"/>
+      <category term="angular-material" scheme="http://wwww.zhaomenghuan.info/tags/angular-material/"/>
     
   </entry>
   
   <entry>
     <title>Angular系列学习笔记（一）—— 聊聊angular的模块化</title>
-    <link href="http://zhaomenghuan.info/2017/03/06/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E8%81%8A%E8%81%8Aangular%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
-    <id>http://zhaomenghuan.info/2017/03/06/Angular系列学习笔记（一）—聊聊angular的模块化/</id>
+    <link href="http://wwww.zhaomenghuan.info/2017/03/06/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E8%81%8A%E8%81%8Aangular%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+    <id>http://wwww.zhaomenghuan.info/2017/03/06/Angular系列学习笔记（一）—聊聊angular的模块化/</id>
     <published>2017-03-05T16:00:00.000Z</published>
     <updated>2017-05-03T16:14:05.284Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>近来换工作了，由于团队技术需要，不得不从vue.js迁移到angular.js，不过这也是一个学习angular的机会，顺便也将这两个框架做一些对比，为了方便其他小伙伴，将学习过程中的内容记录下来。由开始的不太习惯到现在也能够习惯angular的写法，着实在思维上有很大的改变，所以这个系列的文章会记录一下自己的学习过程，本文会由浅及深一步步去解读vue.js和angular.js的区别。由于时间关系，这篇文章断断续续耗时几周，不求什么，只希望在这个过程中将angular相关的一些特性去梳理一下，由于是系列开篇，文章并没有深入探讨源码和原理，后续会写更多个人的思考和探索。</p>
 <h2 id="vuejs-vs-angular之初相见"><a href="#vuejs-vs-angular之初相见" class="headerlink" title="vuejs  vs  angular之初相见"></a>vuejs  vs  angular之初相见</h2><p>对于vue.js我们都需要通过创建一个Vue实例指定作用范围，对于angular只需要ng-app指令就可以。</p>
 <p>vue.js的姿势：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">    &#123;&#123; message &#125;&#125;</div><div class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"changeView"</span>&gt;</span>changeView<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//cdn.bootcss.com/vue/2.1.10/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">        <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">        <span class="attr">data</span>: &#123;</div><div class="line">            <span class="attr">message</span>: <span class="string">'Hello world!'</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">methods</span>: &#123;</div><div class="line">            <span class="attr">changeView</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                <span class="keyword">this</span>.message = <span class="string">'hello vuejs!'</span>;</div><div class="line">                <span class="comment">// 或 app.$data.message = 'hello vuejs!'</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset="utf-8"&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div id="app"&gt;</div><div class="line">    &#123;&#123; message &#125;&#125;</div><div class="line">    &lt;button v-on:click="changeView"&gt;changeView&lt;/button&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script src="//cdn.bootcss.com/vue/2.1.10/vue.js"&gt;&lt;/script&gt;</div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">    var app = new Vue(&#123;</div><div class="line">        el: '#app',</div><div class="line">        data: &#123;</div><div class="line">            message: 'Hello world!'</div><div class="line">        &#125;,</div><div class="line">        methods: &#123;</div><div class="line">            changeView: function()&#123;</div><div class="line">                this.message = 'hello vuejs!';</div><div class="line">                // 或 app.$data.message = 'hello vuejs!'</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 <p>angular的姿势：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">ng-app</span>=<span class="string">"app"</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">"helloCtrl"</span>&gt;</span></div><div class="line">        &#123;&#123;message&#125;&#125;</div><div class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"changeView()"</span>&gt;</span>changeView<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//cdn.bootcss.com/angular.js/1.6.0/angular.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"application/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="keyword">var</span> app = angular.module(<span class="string">'app'</span>, []);</div><div class="line">        app.controller(<span class="string">'helloCtrl'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">            $scope.message = <span class="string">'hello world'</span>;</div><div class="line">            $scope.changeView = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                $scope.message = <span class="string">'hello angular.js!'</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html ng-app="app"&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset="utf-8"&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div ng-controller="helloCtrl"&gt;</div><div class="line">        &#123;&#123;message&#125;&#125;</div><div class="line">        &lt;button ng-click="changeView()"&gt;changeView&lt;/button&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script src="//cdn.bootcss.com/angular.js/1.6.0/angular.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;script type="application/javascript"&gt;</div><div class="line">        var app = angular.module('app', []);</div><div class="line">        app.controller('helloCtrl', function ($scope) &#123;</div><div class="line">            $scope.message = 'hello world';</div><div class="line">            $scope.changeView = function () &#123;</div><div class="line">                $scope.message = 'hello angular.js!';</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 <p>这个例子虽然再简单不过，对于项目开发没有半点用处，但是对于理解vue.js和angular.js的区别有一定的借鉴意义，vue.js中总体的思路是实例化Vue对象，我们通过el属性指定控制的dom范围，data是数据模型，可以通过实例化后的对象app.$data访问数据，在方法中或者<a href="http://cn.vuejs.org/v2/guide/instance.html#生命周期图示" target="_blank" rel="external">生命周期钩子</a>如mounted中可以使用this获取实例上下文，vuejs中没有控制器的概念，属于典型的MVVM架构。然而我们这篇文章不是讲vue.js，因为如果你使用vue.js，那么直接看文档很好理解，无需我多言，这里我们想重点说说angular。</p>
 <p>经常听人说vue.js语法优雅，我想应该是由于vue.js结构更加清晰吧，数据模型和操作分得更清晰，就从命名出发更简单吧，$scope是什么鬼。好吧，查了一下：scope（范围），我们姑且先从字面含义这么理解吧，但是从这例子中发现$scope多次使用，另外不能被改名，不然不能用，我们姑且认为是个神奇的玩意。angular中ng-click的指令和vue.js无大的区别，这里不多言，这里重点想谈谈模块化和angular的依赖注入。</p>
 <h2 id="vuejs-vs-angular之数据模型共享"><a href="#vuejs-vs-angular之数据模型共享" class="headerlink" title="vuejs vs angular之数据模型共享"></a>vuejs vs angular之数据模型共享</h2><p>在vue.js中是通过组件树实现模块化的，而angular通过作用域$scope实现模块化。对于vue.js中模块化的最佳实践是：</p>
 <p><strong> .vue单文件组件 + 模块化标准（common.js或者es6 module) + webpack(或Browserify）。</strong></p>
 <p>而其中核心部分就是组件，用官方的话说就是，组件（Component）是 Vue.js 最强大的功能之一，组件可以扩展 HTML 元素，封装可重用的代码，在较高层面上，组件是自定义元素， Vue.js 的编译器为它添加特殊功能，在有些情况下，组件也可以是原生 HTML 元素的形式，以 is 特性扩展。</p>
-<p>如何构建一个组件，组件之前数据如何共享，这是开发中必须要学习的内容。vue.js组件实例的作用域是孤立的，这意味着不能并且不应该在子组件的模板内直接引用父组件的数据，可以使用 props 把数据传给子组件。另外vue.js中提倡单向数据流：当父组件的属性变化时，将传导给子组件，但是不会反过来。这是为了防止子组件无意修改了父组件的状态——这会让应用的数据流难以理解。当子组件需要更新父组件的状态时，我们可以通过事件触发。下面是一个利用props传递数据和使用事件触发父组件状态的典型例子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">	    &#123;&#123; message &#125;&#125;</div><div class="line">	    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"parentAtion"</span>&gt;</span>parentAtion<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">	    <span class="tag">&lt;<span class="name">child</span> <span class="attr">v-bind:param</span>=<span class="string">"message"</span>  <span class="attr">v-on:childfn</span>=<span class="string">"fromChild"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	</div><div class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/x-template"</span> <span class="attr">id</span>=<span class="string">"child-tpl"</span>&gt;</span><span class="xml"></span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;param&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"childAtion"</span>&gt;</span>childAtion<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">	</div><div class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//cdn.bootcss.com/vue/2.1.10/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">		Vue.component(<span class="string">'child'</span>, &#123;</div><div class="line">			<span class="attr">template</span>: <span class="string">'#child-tpl'</span>,</div><div class="line">		  	<span class="attr">props</span>: [<span class="string">'param'</span>],</div><div class="line">		  	<span class="attr">methods</span>: &#123;</div><div class="line">		  		<span class="attr">childAtion</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		  			<span class="comment">// 触发事件</span></div><div class="line">		  			<span class="keyword">this</span>.$emit(<span class="string">'childfn'</span>, <span class="string">'child component'</span>);</div><div class="line">		  		&#125;</div><div class="line">		  	&#125;</div><div class="line">		&#125;);</div><div class="line">		</div><div class="line">	    <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">	        <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">	        <span class="attr">data</span>: &#123;</div><div class="line">	            <span class="attr">message</span>: <span class="string">'Hello vuejs!'</span></div><div class="line">	        &#125;,</div><div class="line">	        <span class="attr">methods</span>: &#123;</div><div class="line">	            <span class="attr">parentAtion</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	            	<span class="keyword">this</span>.message = <span class="string">'parent component'</span>;</div><div class="line">	            &#125;,</div><div class="line">	            <span class="attr">fromChild</span>: <span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;</div><div class="line">	            	<span class="keyword">this</span>.message = msg;</div><div class="line">	            &#125;</div><div class="line">	        &#125;</div><div class="line">	    &#125;)</div><div class="line">	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>如何构建一个组件，组件之前数据如何共享，这是开发中必须要学习的内容。vue.js组件实例的作用域是孤立的，这意味着不能并且不应该在子组件的模板内直接引用父组件的数据，可以使用 props 把数据传给子组件。另外vue.js中提倡单向数据流：当父组件的属性变化时，将传导给子组件，但是不会反过来。这是为了防止子组件无意修改了父组件的状态——这会让应用的数据流难以理解。当子组件需要更新父组件的状态时，我们可以通过事件触发。下面是一个利用props传递数据和使用事件触发父组件状态的典型例子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset="utf-8"&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div id="app"&gt;</div><div class="line">	    &#123;&#123; message &#125;&#125;</div><div class="line">	    &lt;button v-on:click="parentAtion"&gt;parentAtion&lt;/button&gt;</div><div class="line">	    &lt;child v-bind:param="message"  v-on:childfn="fromChild"&gt;&lt;/child&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	</div><div class="line">	&lt;script type="text/x-template" id="child-tpl"&gt;</div><div class="line">		&lt;div&gt;</div><div class="line">			&lt;span&gt;&#123;&#123;param&#125;&#125;&lt;/span&gt;</div><div class="line">			&lt;button v-on:click="childAtion"&gt;childAtion&lt;/button&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/script&gt;</div><div class="line">	</div><div class="line">	&lt;script src="//cdn.bootcss.com/vue/2.1.10/vue.js"&gt;&lt;/script&gt;</div><div class="line">	&lt;script type="text/javascript"&gt;</div><div class="line">		Vue.component('child', &#123;</div><div class="line">			template: '#child-tpl',</div><div class="line">		  	props: ['param'],</div><div class="line">		  	methods: &#123;</div><div class="line">		  		childAtion: function()&#123;</div><div class="line">		  			// 触发事件</div><div class="line">		  			this.$emit('childfn', 'child component');</div><div class="line">		  		&#125;</div><div class="line">		  	&#125;</div><div class="line">		&#125;);</div><div class="line">		</div><div class="line">	    var app = new Vue(&#123;</div><div class="line">	        el: '#app',</div><div class="line">	        data: &#123;</div><div class="line">	            message: 'Hello vuejs!'</div><div class="line">	        &#125;,</div><div class="line">	        methods: &#123;</div><div class="line">	            parentAtion: function()&#123;</div><div class="line">	            	this.message = 'parent component';</div><div class="line">	            &#125;,</div><div class="line">	            fromChild: function(msg)&#123;</div><div class="line">	            	this.message = msg;</div><div class="line">	            &#125;</div><div class="line">	        &#125;</div><div class="line">	    &#125;)</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
 <p>每个 Vue 实例都实现了<a href="https://cn.vuejs.org/v2/api/#Instance-Methods-Events" target="_blank" rel="external">事件接口(Events interface)</a>，即：</p>
 <ul>
 <li>使用 $on(eventName) 监听事件</li>
@@ -1145,8 +1145,8 @@
 <p>父组件可以在使用子组件的地方直接用 v-on 来监听子组件触发的事件。对于非父子组件通信的通信，在简单的场景下，使用一个空的 Vue 实例作为中央事件总线：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bus = <span class="keyword">new</span> Vue()</div><div class="line"><span class="comment">// 触发组件 A 中的事件</span></div><div class="line">bus.$emit(<span class="string">'id-selected'</span>, <span class="number">1</span>)</div><div class="line"><span class="comment">// 在组件 B 创建的钩子中监听事件</span></div><div class="line">bus.$on(<span class="string">'id-selected'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <p>在更多复杂的情况下，你应该考虑使用专门的<a href="https://cn.vuejs.org/v2/guide/state-management.html#类-Flux-状态管理的官方实现" target="_blank" rel="external">状态管理</a>。</p>
 <p>对于angular 而言，ng-controller指令指定了作用范围，通过$scope对象控制作用域，$scope层层嵌套形成父子关系或者兄弟并列关系，而父子作用域是通过原型继承实现，子作用域可以访问父作用域的数据模型，反过来不行，同理如果父级作用域中的状态改变会影响子作用域，反过来子作用域中的状态改变不会影响父级作用域。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">ng-app</span>=<span class="string">"app"</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">"parentCtrl"</span>&gt;</span></div><div class="line">        &#123;&#123;message&#125;&#125;</div><div class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"parentAtion()"</span>&gt;</span>parentAtion<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">"childCtrl"</span>&gt;</span></div><div class="line">        	&#123;&#123;message&#125;&#125;</div><div class="line">        	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"childAtion()"</span>&gt;</span>childAtion<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"application/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="keyword">var</span> app = angular.module(<span class="string">'app'</span>, []);</div><div class="line">        app.controller(<span class="string">'parentCtrl'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">            $scope.message = <span class="string">'hello angular'</span>;</div><div class="line">            $scope.parentAtion = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                $scope.message = <span class="string">'parent scope'</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">        </div><div class="line">        app.controller(<span class="string">'childCtrl'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">            $scope.childAtion = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                $scope.message = <span class="string">'child scope'</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>由于原型继承的关系，修改父级对象中的message会同时修改子对象中的值，但反之则不行。如果我们想在子级控制器中改变父对象中的值，则需要通过引用进行共享。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span> <span class="attr">ng-app</span>=<span class="string">"app"</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">"parentCtrl"</span>&gt;</span></div><div class="line">        &#123;&#123;dataModal.message&#125;&#125;</div><div class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"parentAtion()"</span>&gt;</span>parentAtion<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">"childCtrl"</span>&gt;</span></div><div class="line">        	&#123;&#123;dataModal.message&#125;&#125;</div><div class="line">        	<span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">"childAtion()"</span>&gt;</span>childAtion<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/angular.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"application/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="keyword">var</span> app = angular.module(<span class="string">'app'</span>, []);</div><div class="line">        app.controller(<span class="string">'parentCtrl'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">            $scope.dataModal = &#123;</div><div class="line">            	<span class="attr">message</span>: <span class="string">'hello angular'</span></div><div class="line">            &#125;</div><div class="line">            $scope.parentAtion = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                $scope.dataModal.message = <span class="string">'parent scope'</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">        </div><div class="line">        app.controller(<span class="string">'childCtrl'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</div><div class="line">            $scope.childAtion = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                $scope.dataModal.message = <span class="string">'child scope'</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html ng-app="app"&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset="utf-8"&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div ng-controller="parentCtrl"&gt;</div><div class="line">        &#123;&#123;message&#125;&#125;</div><div class="line">        &lt;button ng-click="parentAtion()"&gt;parentAtion&lt;/button&gt;</div><div class="line">        &lt;div ng-controller="childCtrl"&gt;</div><div class="line">        	&#123;&#123;message&#125;&#125;</div><div class="line">        	&lt;button ng-click="childAtion()"&gt;childAtion&lt;/button&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script src="js/angular.min.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;script type="application/javascript"&gt;</div><div class="line">        var app = angular.module('app', []);</div><div class="line">        app.controller('parentCtrl', function ($scope) &#123;</div><div class="line">            $scope.message = 'hello angular';</div><div class="line">            $scope.parentAtion = function () &#123;</div><div class="line">                $scope.message = 'parent scope';</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">        </div><div class="line">        app.controller('childCtrl', function ($scope) &#123;</div><div class="line">            $scope.childAtion = function () &#123;</div><div class="line">                $scope.message = 'child scope';</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>由于原型继承的关系，修改父级对象中的message会同时修改子对象中的值，但反之则不行。如果我们想在子级控制器中改变父对象中的值，则需要通过引用进行共享。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html ng-app="app"&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset="utf-8"&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div ng-controller="parentCtrl"&gt;</div><div class="line">        &#123;&#123;dataModal.message&#125;&#125;</div><div class="line">        &lt;button ng-click="parentAtion()"&gt;parentAtion&lt;/button&gt;</div><div class="line">        &lt;div ng-controller="childCtrl"&gt;</div><div class="line">        	&#123;&#123;dataModal.message&#125;&#125;</div><div class="line">        	&lt;button ng-click="childAtion()"&gt;childAtion&lt;/button&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script src="js/angular.min.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;script type="application/javascript"&gt;</div><div class="line">        var app = angular.module('app', []);</div><div class="line">        app.controller('parentCtrl', function ($scope) &#123;</div><div class="line">            $scope.dataModal = &#123;</div><div class="line">            	message: 'hello angular'</div><div class="line">            &#125;</div><div class="line">            $scope.parentAtion = function () &#123;</div><div class="line">                $scope.dataModal.message = 'parent scope';</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">        </div><div class="line">        app.controller('childCtrl', function ($scope) &#123;</div><div class="line">            $scope.childAtion = function () &#123;</div><div class="line">                $scope.dataModal.message = 'child scope';</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
 <p>问题的本质在于字符串、数字和布尔型变量是值复制，数组、对象和函数则是引用复制，通过引用共享可以在子级作用域内部改变它会影响父级作用域的数据模型状态。</p>
 <p>另外我们通过chrome的一个插件AngularJS Batarang可以很清晰的看出$scope对象的继承关系，会发现每个$scope对象都会有个$id，以及对于作用域$scope下的数据模型，如下：</p>
 <figure class="image-bubble">
@@ -1276,29 +1276,29 @@
     
     </summary>
     
-      <category term="Angular系列学习笔记" scheme="http://zhaomenghuan.info/categories/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Angular系列学习笔记" scheme="http://wwww.zhaomenghuan.info/categories/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="angular" scheme="http://zhaomenghuan.info/tags/angular/"/>
+      <category term="JavaScript" scheme="http://wwww.zhaomenghuan.info/tags/JavaScript/"/>
     
-      <category term="JavaScript" scheme="http://zhaomenghuan.info/tags/JavaScript/"/>
+      <category term="angular" scheme="http://wwww.zhaomenghuan.info/tags/angular/"/>
     
-      <category term="vue.js" scheme="http://zhaomenghuan.info/tags/vue-js/"/>
+      <category term="vue.js" scheme="http://wwww.zhaomenghuan.info/tags/vue-js/"/>
     
-      <category term="模块化" scheme="http://zhaomenghuan.info/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+      <category term="模块化" scheme="http://wwww.zhaomenghuan.info/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
     
-      <category term="$scope" scheme="http://zhaomenghuan.info/tags/scope/"/>
+      <category term="$scope" scheme="http://wwww.zhaomenghuan.info/tags/scope/"/>
     
-      <category term="依赖注入" scheme="http://zhaomenghuan.info/tags/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/"/>
+      <category term="依赖注入" scheme="http://wwww.zhaomenghuan.info/tags/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/"/>
     
-      <category term="service" scheme="http://zhaomenghuan.info/tags/service/"/>
+      <category term="service" scheme="http://wwww.zhaomenghuan.info/tags/service/"/>
     
   </entry>
   
   <entry>
     <title>npm 常用命令详解</title>
-    <link href="http://zhaomenghuan.info/2016/11/15/npm%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://zhaomenghuan.info/2016/11/15/npm 常用命令详解/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/11/15/npm%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/11/15/npm 常用命令详解/</id>
     <published>2016-11-14T16:00:00.000Z</published>
     <updated>2017-05-03T16:16:30.034Z</updated>
     
@@ -1512,17 +1512,17 @@
     
     </summary>
     
-      <category term="node学习之路" scheme="http://zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <category term="node学习之路" scheme="http://wwww.zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="npm" scheme="http://zhaomenghuan.info/tags/npm/"/>
+      <category term="npm" scheme="http://wwww.zhaomenghuan.info/tags/npm/"/>
     
   </entry>
   
   <entry>
     <title>探秘JavaScript中的六个字符</title>
-    <link href="http://zhaomenghuan.info/2016/10/12/%E6%8E%A2%E7%A7%98JavaScript%E4%B8%AD%E7%9A%84%E5%85%AD%E4%B8%AA%E5%AD%97%E7%AC%A6/"/>
-    <id>http://zhaomenghuan.info/2016/10/12/探秘JavaScript中的六个字符/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/10/12/%E6%8E%A2%E7%A7%98JavaScript%E4%B8%AD%E7%9A%84%E5%85%AD%E4%B8%AA%E5%AD%97%E7%AC%A6/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/10/12/探秘JavaScript中的六个字符/</id>
     <published>2016-10-11T16:00:00.000Z</published>
     <updated>2017-05-04T06:56:34.531Z</updated>
     
@@ -1595,17 +1595,17 @@
     
     </summary>
     
-      <category term="JavaScript进阶学习" scheme="http://zhaomenghuan.info/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="JavaScript进阶学习" scheme="http://wwww.zhaomenghuan.info/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="JavaScript" scheme="http://zhaomenghuan.info/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wwww.zhaomenghuan.info/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>node学习之路（一）—— 网络请求</title>
-    <link href="http://zhaomenghuan.info/2016/09/29/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
-    <id>http://zhaomenghuan.info/2016/09/29/node学习之路（一）—网络请求/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/09/29/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/09/29/node学习之路（一）—网络请求/</id>
     <published>2016-09-28T16:00:00.000Z</published>
     <updated>2017-05-03T16:16:12.383Z</updated>
     
@@ -1713,27 +1713,27 @@
     
     </summary>
     
-      <category term="node学习之路" scheme="http://zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <category term="node学习之路" scheme="http://wwww.zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="JavaScript" scheme="http://zhaomenghuan.info/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wwww.zhaomenghuan.info/tags/JavaScript/"/>
     
-      <category term="nodejs" scheme="http://zhaomenghuan.info/tags/nodejs/"/>
+      <category term="nodejs" scheme="http://wwww.zhaomenghuan.info/tags/nodejs/"/>
     
-      <category term="http" scheme="http://zhaomenghuan.info/tags/http/"/>
+      <category term="http" scheme="http://wwww.zhaomenghuan.info/tags/http/"/>
     
-      <category term="url" scheme="http://zhaomenghuan.info/tags/url/"/>
+      <category term="url" scheme="http://wwww.zhaomenghuan.info/tags/url/"/>
     
-      <category term="Query String" scheme="http://zhaomenghuan.info/tags/Query-String/"/>
+      <category term="Query String" scheme="http://wwww.zhaomenghuan.info/tags/Query-String/"/>
     
-      <category term="爬虫" scheme="http://zhaomenghuan.info/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="http://wwww.zhaomenghuan.info/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>录音文件与Base64编码相互转换的方法</title>
-    <link href="http://zhaomenghuan.info/2016/08/17/%E5%BD%95%E9%9F%B3%E6%96%87%E4%BB%B6%E4%B8%8EBase64%E7%BC%96%E7%A0%81%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://zhaomenghuan.info/2016/08/17/录音文件与Base64编码相互转换的方法/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/08/17/%E5%BD%95%E9%9F%B3%E6%96%87%E4%BB%B6%E4%B8%8EBase64%E7%BC%96%E7%A0%81%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/08/17/录音文件与Base64编码相互转换的方法/</id>
     <published>2016-08-16T16:00:00.000Z</published>
     <updated>2017-05-03T16:17:28.185Z</updated>
     
@@ -1767,23 +1767,23 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
     
-      <category term="base64" scheme="http://zhaomenghuan.info/tags/base64/"/>
+      <category term="base64" scheme="http://wwww.zhaomenghuan.info/tags/base64/"/>
     
-      <category term="录音" scheme="http://zhaomenghuan.info/tags/%E5%BD%95%E9%9F%B3/"/>
+      <category term="录音" scheme="http://wwww.zhaomenghuan.info/tags/%E5%BD%95%E9%9F%B3/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript进阶学习（三）—— 基于html5 File API文件操作</title>
-    <link href="http://zhaomenghuan.info/2016/08/16/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8Ehtml5%20File%20API%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
-    <id>http://zhaomenghuan.info/2016/08/16/JavaScript进阶学习（三）—基于html5 File API文件操作/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/08/16/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8Ehtml5%20File%20API%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/08/16/JavaScript进阶学习（三）—基于html5 File API文件操作/</id>
     <published>2016-08-15T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:01.555Z</updated>
     
@@ -1943,27 +1943,27 @@
     
     </summary>
     
-      <category term="JavaScript进阶学习" scheme="http://zhaomenghuan.info/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="JavaScript进阶学习" scheme="http://wwww.zhaomenghuan.info/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="JavaScript" scheme="http://zhaomenghuan.info/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wwww.zhaomenghuan.info/tags/JavaScript/"/>
     
-      <category term="blob" scheme="http://zhaomenghuan.info/tags/blob/"/>
+      <category term="blob" scheme="http://wwww.zhaomenghuan.info/tags/blob/"/>
     
-      <category term="File" scheme="http://zhaomenghuan.info/tags/File/"/>
+      <category term="File" scheme="http://wwww.zhaomenghuan.info/tags/File/"/>
     
-      <category term="FileReader" scheme="http://zhaomenghuan.info/tags/FileReader/"/>
+      <category term="FileReader" scheme="http://wwww.zhaomenghuan.info/tags/FileReader/"/>
     
-      <category term="DataURI" scheme="http://zhaomenghuan.info/tags/DataURI/"/>
+      <category term="DataURI" scheme="http://wwww.zhaomenghuan.info/tags/DataURI/"/>
     
-      <category term="URL" scheme="http://zhaomenghuan.info/tags/URL/"/>
+      <category term="URL" scheme="http://wwww.zhaomenghuan.info/tags/URL/"/>
     
   </entry>
   
   <entry>
     <title>mui组件通用CSS类</title>
-    <link href="http://zhaomenghuan.info/2016/08/05/mui%E7%BB%84%E4%BB%B6%E9%80%9A%E7%94%A8CSS%E7%B1%BB/"/>
-    <id>http://zhaomenghuan.info/2016/08/05/mui组件通用CSS类/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/08/05/mui%E7%BB%84%E4%BB%B6%E9%80%9A%E7%94%A8CSS%E7%B1%BB/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/08/05/mui组件通用CSS类/</id>
     <published>2016-08-04T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:57.990Z</updated>
     
@@ -2015,19 +2015,19 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
     
-      <category term="css" scheme="http://zhaomenghuan.info/tags/css/"/>
+      <category term="css" scheme="http://wwww.zhaomenghuan.info/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（七）— 基于native.js的文件系统管理功能实现</title>
-    <link href="http://zhaomenghuan.info/2016/08/01/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8Enative.js%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://zhaomenghuan.info/2016/08/01/mui初级入门教程（七）—基于native.js的文件系统管理功能实现/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/08/01/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8Enative.js%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/08/01/mui初级入门教程（七）—基于native.js的文件系统管理功能实现/</id>
     <published>2016-07-31T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:18.980Z</updated>
     
@@ -2106,21 +2106,21 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
     
-      <category term="nativejs" scheme="http://zhaomenghuan.info/tags/nativejs/"/>
+      <category term="nativejs" scheme="http://wwww.zhaomenghuan.info/tags/nativejs/"/>
     
-      <category term="android" scheme="http://zhaomenghuan.info/tags/android/"/>
+      <category term="android" scheme="http://wwww.zhaomenghuan.info/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>HTML5+ APP页面传参详解</title>
-    <link href="http://zhaomenghuan.info/2016/07/28/HTML5+APP%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%8F%82%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://zhaomenghuan.info/2016/07/28/HTML5+APP页面传参详解/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/07/28/HTML5+APP%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%8F%82%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/07/28/HTML5+APP页面传参详解/</id>
     <published>2016-07-27T16:00:00.000Z</published>
     <updated>2017-05-03T16:14:50.701Z</updated>
     
@@ -2167,21 +2167,21 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
     
-      <category term="页面传参" scheme="http://zhaomenghuan.info/tags/%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%8F%82/"/>
+      <category term="页面传参" scheme="http://wwww.zhaomenghuan.info/tags/%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%8F%82/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（六）— 模板页面实现原理及多端适配指南</title>
-    <link href="http://zhaomenghuan.info/2016/07/26/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89%E2%80%94%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%A4%9A%E7%AB%AF%E9%80%82%E9%85%8D%E6%8C%87%E5%8D%97/"/>
-    <id>http://zhaomenghuan.info/2016/07/26/mui初级入门教程（六）—模板页面实现原理及多端适配指南/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/07/26/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89%E2%80%94%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%A4%9A%E7%AB%AF%E9%80%82%E9%85%8D%E6%8C%87%E5%8D%97/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/07/26/mui初级入门教程（六）—模板页面实现原理及多端适配指南/</id>
     <published>2016-07-25T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:37.346Z</updated>
     
@@ -2258,25 +2258,25 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
     
-      <category term="webview" scheme="http://zhaomenghuan.info/tags/webview/"/>
+      <category term="webview" scheme="http://wwww.zhaomenghuan.info/tags/webview/"/>
     
-      <category term="template" scheme="http://zhaomenghuan.info/tags/template/"/>
+      <category term="template" scheme="http://wwww.zhaomenghuan.info/tags/template/"/>
     
-      <category term="os" scheme="http://zhaomenghuan.info/tags/os/"/>
+      <category term="os" scheme="http://wwww.zhaomenghuan.info/tags/os/"/>
     
-      <category term="多端适配" scheme="http://zhaomenghuan.info/tags/%E5%A4%9A%E7%AB%AF%E9%80%82%E9%85%8D/"/>
+      <category term="多端适配" scheme="http://wwww.zhaomenghuan.info/tags/%E5%A4%9A%E7%AB%AF%E9%80%82%E9%85%8D/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript进阶学习（二）—— 基于原型链继承的js工具库的实现方法</title>
-    <link href="http://zhaomenghuan.info/2016/07/03/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%BB%A7%E6%89%BF%E7%9A%84js%E5%B7%A5%E5%85%B7%E5%BA%93%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/"/>
-    <id>http://zhaomenghuan.info/2016/07/03/JavaScript进阶学习（二）—基于原型链继承的js工具库的实现方法/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/07/03/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%BB%A7%E6%89%BF%E7%9A%84js%E5%B7%A5%E5%85%B7%E5%BA%93%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/07/03/JavaScript进阶学习（二）—基于原型链继承的js工具库的实现方法/</id>
     <published>2016-07-02T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:07.999Z</updated>
     
@@ -2397,21 +2397,21 @@
     
     </summary>
     
-      <category term="JavaScript进阶学习" scheme="http://zhaomenghuan.info/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="JavaScript进阶学习" scheme="http://wwww.zhaomenghuan.info/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="JavaScript" scheme="http://zhaomenghuan.info/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://wwww.zhaomenghuan.info/tags/JavaScript/"/>
     
-      <category term="原型链" scheme="http://zhaomenghuan.info/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+      <category term="原型链" scheme="http://wwww.zhaomenghuan.info/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
     
-      <category term="jQuery" scheme="http://zhaomenghuan.info/tags/jQuery/"/>
+      <category term="jQuery" scheme="http://wwww.zhaomenghuan.info/tags/jQuery/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（五）—  聊聊即时通讯（IM），基于环信 web im SDK</title>
-    <link href="http://zhaomenghuan.info/2016/06/15/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89%E2%80%94%E8%81%8A%E8%81%8A%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%EF%BC%88IM%EF%BC%89%EF%BC%8C%E5%9F%BA%E4%BA%8E%E7%8E%AF%E4%BF%A1%20web%20im%20SDK/"/>
-    <id>http://zhaomenghuan.info/2016/06/15/mui初级入门教程（五）—聊聊即时通讯（IM），基于环信 web im SDK/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/06/15/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89%E2%80%94%E8%81%8A%E8%81%8A%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%EF%BC%88IM%EF%BC%89%EF%BC%8C%E5%9F%BA%E4%BA%8E%E7%8E%AF%E4%BF%A1%20web%20im%20SDK/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/06/15/mui初级入门教程（五）—聊聊即时通讯（IM），基于环信 web im SDK/</id>
     <published>2016-06-14T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:32.881Z</updated>
     
@@ -2627,27 +2627,27 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
     
-      <category term="环信" scheme="http://zhaomenghuan.info/tags/%E7%8E%AF%E4%BF%A1/"/>
+      <category term="环信" scheme="http://wwww.zhaomenghuan.info/tags/%E7%8E%AF%E4%BF%A1/"/>
     
-      <category term="im" scheme="http://zhaomenghuan.info/tags/im/"/>
+      <category term="im" scheme="http://wwww.zhaomenghuan.info/tags/im/"/>
     
-      <category term="页面传值" scheme="http://zhaomenghuan.info/tags/%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC/"/>
+      <category term="页面传值" scheme="http://wwww.zhaomenghuan.info/tags/%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC/"/>
     
-      <category term="缓存" scheme="http://zhaomenghuan.info/tags/%E7%BC%93%E5%AD%98/"/>
+      <category term="缓存" scheme="http://wwww.zhaomenghuan.info/tags/%E7%BC%93%E5%AD%98/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（四）—  再谈webview，从小白变“大神”！</title>
-    <link href="http://zhaomenghuan.info/2016/06/05/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E5%86%8D%E8%B0%88webview%EF%BC%8C%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%8F%98%E2%80%9C%E5%A4%A7%E7%A5%9E%E2%80%9D%EF%BC%81/"/>
-    <id>http://zhaomenghuan.info/2016/06/05/mui初级入门教程（四）—再谈webview，从小白变“大神”！/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/06/05/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E5%86%8D%E8%B0%88webview%EF%BC%8C%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%8F%98%E2%80%9C%E5%A4%A7%E7%A5%9E%E2%80%9D%EF%BC%81/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/06/05/mui初级入门教程（四）—再谈webview，从小白变“大神”！/</id>
     <published>2016-06-04T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:41.335Z</updated>
     
@@ -2880,21 +2880,21 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
     
-      <category term="webview" scheme="http://zhaomenghuan.info/tags/webview/"/>
+      <category term="webview" scheme="http://wwww.zhaomenghuan.info/tags/webview/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（三）— html5+ XMLHttpRequest 与mui ajax用法详解</title>
-    <link href="http://zhaomenghuan.info/2016/05/29/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94html5+%20XMLHttpRequest%20%E4%B8%8Emui%20ajax%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://zhaomenghuan.info/2016/05/29/mui初级入门教程（三）—html5+ XMLHttpRequest 与mui ajax用法详解/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/05/29/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94html5+%20XMLHttpRequest%20%E4%B8%8Emui%20ajax%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/05/29/mui初级入门教程（三）—html5+ XMLHttpRequest 与mui ajax用法详解/</id>
     <published>2016-05-28T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:23.500Z</updated>
     
@@ -3129,25 +3129,25 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
     
-      <category term="XMLHttpRequest" scheme="http://zhaomenghuan.info/tags/XMLHttpRequest/"/>
+      <category term="XMLHttpRequest" scheme="http://wwww.zhaomenghuan.info/tags/XMLHttpRequest/"/>
     
-      <category term="ajax" scheme="http://zhaomenghuan.info/tags/ajax/"/>
+      <category term="ajax" scheme="http://wwww.zhaomenghuan.info/tags/ajax/"/>
     
-      <category term="懒加载" scheme="http://zhaomenghuan.info/tags/%E6%87%92%E5%8A%A0%E8%BD%BD/"/>
+      <category term="懒加载" scheme="http://wwww.zhaomenghuan.info/tags/%E6%87%92%E5%8A%A0%E8%BD%BD/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（二）— html5+ webview 底部栏用法详解</title>
-    <link href="http://zhaomenghuan.info/2016/05/19/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94html5+%20webview%20%E5%BA%95%E9%83%A8%E6%A0%8F%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://zhaomenghuan.info/2016/05/19/mui初级入门教程（二）—html5+ webview 底部栏用法详解/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/05/19/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94html5+%20webview%20%E5%BA%95%E9%83%A8%E6%A0%8F%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/05/19/mui初级入门教程（二）—html5+ webview 底部栏用法详解/</id>
     <published>2016-05-18T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:28.094Z</updated>
     
@@ -3277,21 +3277,21 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
     
-      <category term="webview" scheme="http://zhaomenghuan.info/tags/webview/"/>
+      <category term="webview" scheme="http://wwww.zhaomenghuan.info/tags/webview/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（一）— 小白入手mui的学习路线</title>
-    <link href="http://zhaomenghuan.info/2016/05/15/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E5%B0%8F%E7%99%BD%E5%85%A5%E6%89%8Bmui%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
-    <id>http://zhaomenghuan.info/2016/05/15/mui初级入门教程（一）—小白入手mui的学习路线/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/05/15/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E5%B0%8F%E7%99%BD%E5%85%A5%E6%89%8Bmui%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/05/15/mui初级入门教程（一）—小白入手mui的学习路线/</id>
     <published>2016-05-14T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:13.126Z</updated>
     
@@ -3364,19 +3364,19 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
     
   </entry>
   
   <entry>
     <title>webpack入门详解</title>
-    <link href="http://zhaomenghuan.info/2016/04/22/webpack%E5%85%A5%E9%97%A8%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://zhaomenghuan.info/2016/04/22/webpack入门详解/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/04/22/webpack%E5%85%A5%E9%97%A8%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/04/22/webpack入门详解/</id>
     <published>2016-04-21T16:00:00.000Z</published>
     <updated>2017-05-03T16:16:38.650Z</updated>
     
@@ -3478,17 +3478,17 @@
     
     </summary>
     
-      <category term="node学习之路" scheme="http://zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <category term="node学习之路" scheme="http://wwww.zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="webpack" scheme="http://zhaomenghuan.info/tags/webpack/"/>
+      <category term="webpack" scheme="http://wwww.zhaomenghuan.info/tags/webpack/"/>
     
   </entry>
   
   <entry>
     <title>浅析前端模块化</title>
-    <link href="http://zhaomenghuan.info/2016/04/15/%E6%B5%85%E6%9E%90%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
-    <id>http://zhaomenghuan.info/2016/04/15/浅析前端模块化/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/04/15/%E6%B5%85%E6%9E%90%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/04/15/浅析前端模块化/</id>
     <published>2016-04-14T16:00:00.000Z</published>
     <updated>2017-05-03T16:17:56.877Z</updated>
     
@@ -3588,19 +3588,19 @@
     
     </summary>
     
-      <category term="JavaScript进阶学习" scheme="http://zhaomenghuan.info/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="JavaScript进阶学习" scheme="http://wwww.zhaomenghuan.info/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="webpack" scheme="http://zhaomenghuan.info/tags/webpack/"/>
+      <category term="webpack" scheme="http://wwww.zhaomenghuan.info/tags/webpack/"/>
     
-      <category term="前端模块化" scheme="http://zhaomenghuan.info/tags/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+      <category term="前端模块化" scheme="http://wwww.zhaomenghuan.info/tags/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>走近github王国，git入门教程</title>
-    <link href="http://zhaomenghuan.info/2016/04/01/%E8%B5%B0%E8%BF%91github%E7%8E%8B%E5%9B%BD%EF%BC%8Cgit%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
-    <id>http://zhaomenghuan.info/2016/04/01/走近github王国，git入门教程/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/04/01/%E8%B5%B0%E8%BF%91github%E7%8E%8B%E5%9B%BD%EF%BC%8Cgit%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/04/01/走近github王国，git入门教程/</id>
     <published>2016-03-31T16:00:00.000Z</published>
     <updated>2017-05-03T16:18:57.151Z</updated>
     
@@ -3758,19 +3758,19 @@
     
     </summary>
     
-      <category term="node学习之路" scheme="http://zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <category term="node学习之路" scheme="http://wwww.zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="git" scheme="http://zhaomenghuan.info/tags/git/"/>
+      <category term="git" scheme="http://wwww.zhaomenghuan.info/tags/git/"/>
     
-      <category term="github" scheme="http://zhaomenghuan.info/tags/github/"/>
+      <category term="github" scheme="http://wwww.zhaomenghuan.info/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>基于JavaScript的桌面应用入门</title>
-    <link href="http://zhaomenghuan.info/2016/03/28/%E5%9F%BA%E4%BA%8EJavaScript%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E5%85%A5%E9%97%A8/"/>
-    <id>http://zhaomenghuan.info/2016/03/28/基于JavaScript的桌面应用入门/</id>
+    <link href="http://wwww.zhaomenghuan.info/2016/03/28/%E5%9F%BA%E4%BA%8EJavaScript%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E5%85%A5%E9%97%A8/"/>
+    <id>http://wwww.zhaomenghuan.info/2016/03/28/基于JavaScript的桌面应用入门/</id>
     <published>2016-03-27T16:00:00.000Z</published>
     <updated>2017-05-07T12:40:03.284Z</updated>
     
@@ -3857,14 +3857,14 @@
     
     </summary>
     
-      <category term="node学习之路" scheme="http://zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <category term="node学习之路" scheme="http://wwww.zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="vue.js" scheme="http://zhaomenghuan.info/tags/vue-js/"/>
+      <category term="vue.js" scheme="http://wwww.zhaomenghuan.info/tags/vue-js/"/>
     
-      <category term="electron" scheme="http://zhaomenghuan.info/tags/electron/"/>
+      <category term="electron" scheme="http://wwww.zhaomenghuan.info/tags/electron/"/>
     
-      <category term="markdown" scheme="http://zhaomenghuan.info/tags/markdown/"/>
+      <category term="markdown" scheme="http://wwww.zhaomenghuan.info/tags/markdown/"/>
     
   </entry>
   

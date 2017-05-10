@@ -31,7 +31,7 @@
 <meta name="keywords" content="cordova,hybrid App">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cordova研习笔记(二) —— cordova 6.X 源码解读">
-<meta property="og:url" content="http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/index.html">
+<meta property="og:url" content="http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/index.html">
 <meta property="og:site_name" content="小青年博客">
 <meta property="og:description" content="前言cordova(PhoneGap) 是一个优秀的经典的中间件框架，网上对其源代码解读的文章确实不多，本系列文章试着解读一下，以便对cordova 框架的原理理解得更深入。本文源码为cordova android版本6.1.2。 源码结构我们使用IDE的代码折叠功能先从整体上把握代码结构。123456/** 版权申明及注释部分*/;(function() &amp;#123;  ...&amp;#125;)()">
 <meta property="og:updated_time" content="2017-05-08T05:43:46.652Z">
@@ -295,11 +295,11 @@
 
 
         
-        转载需标注本文原始地址：<a href="/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/" target="_blank" rel="external">http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/</a>
+        转载需标注本文原始地址：<a href="/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/" target="_blank" rel="external">http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/</a>
         
     </div>
     <footer>
-        <a href="http://zhaomenghuan.info">
+        <a href="http://wwww.zhaomenghuan.info">
             <img src="/img/avatar.png" alt="赵梦欢">
             赵梦欢
         </a>
@@ -325,7 +325,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/&title=《cordova研习笔记(二) —— cordova 6.X 源码解读》 — 小青年博客&pic=http://zhaomenghuan.info/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/&title=《cordova研习笔记(二) —— cordova 6.X 源码解读》 — 小青年博客&pic=http://wwww.zhaomenghuan.info/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -335,22 +335,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/&title=《cordova研习笔记(二) —— cordova 6.X 源码解读》 — 小青年博客&source=小青年,小青年博客,前端开发,android,技术宅,菜鸟教程,一个神奇的博客。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/&title=《cordova研习笔记(二) —— cordova 6.X 源码解读》 — 小青年博客&source=小青年,小青年博客,前端开发,android,技术宅,菜鸟教程,一个神奇的博客。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《cordova研习笔记(二) —— cordova 6.X 源码解读》 — 小青年博客&url=http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/&via=http://zhaomenghuan.info" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《cordova研习笔记(二) —— cordova 6.X 源码解读》 — 小青年博客&url=http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/&via=http://wwww.zhaomenghuan.info" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -399,7 +399,7 @@
     <div id="cloud-tie-wrapper" class="comments cloud-tie-wrapper"></div>
     <script>
     var cloudTieConfig = {
-      url: 'http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/index.html',
+      url: 'http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/index.html',
       sourceId: 'cordova研习笔记(二)——cordova 6.X 源码解读（上）',
       productKey: '908c5c187aac42b3898e9ed64a066f2f',
       target: 'cloud-tie-wrapper',
@@ -481,7 +481,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/&title=《cordova研习笔记(二) —— cordova 6.X 源码解读》 — 小青年博客&pic=http://zhaomenghuan.info/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/&title=《cordova研习笔记(二) —— cordova 6.X 源码解读》 — 小青年博客&pic=http://wwww.zhaomenghuan.info/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -491,22 +491,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/&title=《cordova研习笔记(二) —— cordova 6.X 源码解读》 — 小青年博客&source=小青年,小青年博客,前端开发,android,技术宅,菜鸟教程,一个神奇的博客。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/&title=《cordova研习笔记(二) —— cordova 6.X 源码解读》 — 小青年博客&source=小青年,小青年博客,前端开发,android,技术宅,菜鸟教程,一个神奇的博客。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《cordova研习笔记(二) —— cordova 6.X 源码解读》 — 小青年博客&url=http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/&via=http://zhaomenghuan.info" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《cordova研习笔记(二) —— cordova 6.X 源码解读》 — 小青年博客&url=http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/&via=http://wwww.zhaomenghuan.info" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -517,7 +517,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADKElEQVR42u3aQZKjMBAEQP//094PjKFKwhumSU4TDgaU8qHc3Xq94usdXMf/e/y047ckK3l948LGxsa+CTvBJEs8RibP+fSEtaedbA02Njb2OHbygnYpbeDl25pv+sfPsbGxsR/MPi4P2vsTQFvMYGNjY2Mn7LWFto2htcIGGxsb+5ns9if+VTHWdvLXChVsbGzs2ez8xb//91fm29jY2Ng/zH6XV9LWSeInD6e10uhEgY2NjT2InQdAzkuW3pYKaw2pk/VjY2Njj2DnzaN2We2G5hvX1hdFjwobGxv7huy1ozk7Tfwk2FreYkBiY2Njj2BfVWC0B2jyoz/tIDkaNmNjY2MPZbeHcpL2fXvU5qpS5+RzbGxs7EHsnbjKX7NThLSlUbLF2NjY2JPY0Q/3pdZ8u7i1pn/7LmxsbOwnsNfC6Rtj2rwoqgMYGxsbexC7jYp8lJsXEjv3XDCixsbGxh7Ebg/Z1P2qIGDy5e6MKLCxsbHnsb9xcGc/INtDPMfP/OM52NjY2CPYyYsTcH5nG2/5F4CNjY39THY70F0rLa5tNiVbH40ZsLGxsUew20XvD2LzxtB+y+nkyA42Njb2OHbbvkm2Zi2E8uNB7VjijwDDxsbGvjk7b9PstHh2tqN9ThF42NjY2CPYeau9bc0nJUoyDFgLv5NNwcbGxh7E3mnrt6XCVYPbtuT4uAZsbGzsEex8QdeG3No4IX/LyTOxsbGxB7Hb2EiaQW2Bsb81eRmDjY2NPZvdhkEbVDtxmGx9vhHY2NjYU9lR/yk+arlYHuTN/TiuotzGxsbGHspOoi6/J29Ctccr2+IEGxsbeyp751BOu8R9arKVJ18nNjY29jh2frymLVH2tymPzyLGsLGxsUew3+W1cxBnvyxZG2kU0YWNjY19Q3Z+JcHWgtsxcL4FbbMMGxsb++7s9sBNHj87Dak2zPJWFDY2NvZU9s5Yd61sqEezS3XEx0+wsbGxH8zOW07JJ9ce8SkiDRsbG/vB7LbllMdMO2xeK7GwsbGxp7LbWMo3KG8w/c/xMDY2NvYk9n7MJC9oy5W8jEmibjFisbGxsX+d/Q/WUNmFKxal8wAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADKUlEQVR42u3aQW7CQAwF0N7/0nSLVArf9iAR87KqAk3mTRe/tufnJ75ud9f9neffTL7z9/7zNz7/rcMXNjY29kXYt6fXfwvKf04+7eHzTx+8ERsbG3sdu/r6/Pt5+OUhV30yNjY2Nna1eMh/d/KEPBqxsbGxsZMgSV6Wlyh58wgbGxsbO28qnQqYPA7nzz/QS8PGxsb+eHY+Ff38n98y38bGxsb+YPZtfFVLl1Hx0AqtB2vGxsbGXsSuhkRylKfXZqre7xVI2NjY2PvY1aMz1QZ9soj8fh5vLw4AYWNjYy9lv0i5IFqqPZzqMZ3qGODfFWJjY2OvYyetonzsOtnQZIvzTS9PtrGxsbEvyO79i5+HTbLcpHk02dZykmNjY2Nfip00bvJGUnXQm3w/D9dCWwobGxt7EbvX+pkMDyaj3+rKoxIIGxsbex27N6Bthkc8VK4OALCxsbG/mZ0/qNokSrY4CbbkCck6sbGxsTex80f0WvNJnEwiMw8wbGxs7K3svEhIHpqXE9VDPPmgojq6xsbGxr4uu/qyeSmSjxzmEVjeP2xsbOxF7N79+Rb0yolqiGJjY2NvYr+vSZQPFc6WNAeqK2xsbOyLs5N/5ZMSIi8V8gLj8HZgY2Njr2DnzZokeHqbVS1aqkXRg/VjY2NjL2LnBUPeEjrVeKoGVX5hY2Njb2L3hqZJjPV489FCshJsbGzsTezemZZToZIMdPO3jA7xYGNjY1+W3axdWoGXN4x6h4cKBRU2Njb2Iva7hwF5+766HfMmFzY2NvYOdn7sJrmfxEa1eOgdyilEFzY2NvbF2T18rw00D6deC+nFfBsbGxv74uy8CJkMZatbkI8Tqi0tbGxs7H3svK3T24heM+hUy+lF3GJjY2OvYE8O2eSRdrZt1HvXgfk2NjY29keyJ22dCens4LY82cbGxsZex85J1e9MRsV506o5+sXGxsZex55ESK/RX130qVExNjY29jezJ2PXauDNnx911LCxsbG/jJ0PaJMnTzblwLAZGxsbex07bxglgElEVf8kzT8DNjY29iJ2b+xaDafk03yJCaA6WsbGxsa+IPsXd1pPAilTcs0AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

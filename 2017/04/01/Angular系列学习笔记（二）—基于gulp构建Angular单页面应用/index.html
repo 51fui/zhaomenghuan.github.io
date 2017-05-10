@@ -26,12 +26,12 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="gulp,angular,angular-ui-router,angular-material">
+    <meta name="keywords" content="angular,gulp,angular-ui-router,angular-material">
     <meta name="description" content="前言构建打包工具之前一直是使用 webpack（歪脖帕克，毕竟尤大推荐的工具），由于公司这边是使用gulp，为了和公司同步，私下还是要学习学习，毕竟懂点万一需要和老大交流也不至于说有啥问题，这篇文章将会以零基础的角度去写一下基于gulp搭建angular的工程，借这个机会顺便重构一下自己的博客。 gulp基础入门在开工之前确保自己已经安装了node环境，没有安装的自行安装好node，安装的时候默认">
-<meta name="keywords" content="gulp,angular,angular-ui-router,angular-material">
+<meta name="keywords" content="angular,gulp,angular-ui-router,angular-material">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用">
-<meta property="og:url" content="http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/index.html">
+<meta property="og:url" content="http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/index.html">
 <meta property="og:site_name" content="小青年博客">
 <meta property="og:description" content="前言构建打包工具之前一直是使用 webpack（歪脖帕克，毕竟尤大推荐的工具），由于公司这边是使用gulp，为了和公司同步，私下还是要学习学习，毕竟懂点万一需要和老大交流也不至于说有啥问题，这篇文章将会以零基础的角度去写一下基于gulp搭建angular的工程，借这个机会顺便重构一下自己的博客。 gulp基础入门在开工之前确保自己已经安装了node环境，没有安装的自行安装好node，安装的时候默认">
 <meta property="og:updated_time" content="2017-05-03T16:13:59.547Z">
@@ -356,11 +356,11 @@
 
 
         
-        转载需标注本文原始地址：<a href="/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/" target="_blank" rel="external">http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/</a>
+        转载需标注本文原始地址：<a href="/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/" target="_blank" rel="external">http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/</a>
         
     </div>
     <footer>
-        <a href="http://zhaomenghuan.info">
+        <a href="http://wwww.zhaomenghuan.info">
             <img src="/img/avatar.png" alt="赵梦欢">
             赵梦欢
         </a>
@@ -386,7 +386,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/&title=《Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用》 — 小青年博客&pic=http://zhaomenghuan.info/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/&title=《Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用》 — 小青年博客&pic=http://wwww.zhaomenghuan.info/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -396,22 +396,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/&title=《Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用》 — 小青年博客&source=小青年,小青年博客,前端开发,android,技术宅,菜鸟教程,一个神奇的博客。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/&title=《Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用》 — 小青年博客&source=小青年,小青年博客,前端开发,android,技术宅,菜鸟教程,一个神奇的博客。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用》 — 小青年博客&url=http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/&via=http://zhaomenghuan.info" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用》 — 小青年博客&url=http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/&via=http://wwww.zhaomenghuan.info" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -467,7 +467,7 @@
     <div id="cloud-tie-wrapper" class="comments cloud-tie-wrapper"></div>
     <script>
     var cloudTieConfig = {
-      url: 'http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/index.html',
+      url: 'http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/index.html',
       sourceId: 'Angular系列学习笔记（二）—基于gulp构建Angular单页面应用',
       productKey: '908c5c187aac42b3898e9ed64a066f2f',
       target: 'cloud-tie-wrapper',
@@ -549,7 +549,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/&title=《Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用》 — 小青年博客&pic=http://zhaomenghuan.info/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/&title=《Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用》 — 小青年博客&pic=http://wwww.zhaomenghuan.info/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -559,22 +559,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/&title=《Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用》 — 小青年博客&source=小青年,小青年博客,前端开发,android,技术宅,菜鸟教程,一个神奇的博客。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/&title=《Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用》 — 小青年博客&source=小青年,小青年博客,前端开发,android,技术宅,菜鸟教程,一个神奇的博客。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用》 — 小青年博客&url=http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/&via=http://zhaomenghuan.info" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用》 — 小青年博客&url=http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/&via=http://wwww.zhaomenghuan.info" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -585,7 +585,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD60lEQVR42u3aQW4jMQwEQP//08l1D7HcTWqCLFA+BYE9ksoHmlS/XvHr659X8p/k//tPJTt8PfHCgQMHDhzxUZPNvXvCeaMt63lv+6/q7Ylw4MCBA8cljvaQm60ncOe1ZhzRM3HgwIEDx5/hSEpy0j21zWRe4HHgwIEDx//LkYz/ZtO5W40lDhw4cOB4miNZuEXMG628FcxHfo/PSnHgwIEDx7y3ep039Pf/fiTfgQMHDhw4Rs1SPoxrS9qmtcu/tuJ0OHDgwIFjzTG77NlEB/K1EuL2PdGucODAgQPHJY67obe2+LVDxtnYsW7kcODAgQPHmmP2oHYkl5fqPL6wB8WBAwcOHLc4zottGqdZiW2Hg23xjohx4MCBA8eIo21+8iBdcoD8P3kMLm8ph2NBHDhw4MARzMraKMOtgWDStrVf0ubCDAcOHDhw7DnyA7cHaMvbfii5+YLftnA4cODAgaPkyI8aXdUsily7yhP7wYEDBw4ce442TNBuaxa5u9vsFYNIHDhw4MBxiSMPqO3DDXk5T9q5NhIRxeNw4MCBA8eaoy2ieaxhw9GuOLswG1474cCBAweOYy/WXt7kg799MKIdNbYXVxfusnDgwIEDx3GZ/RP2TVdevGdhiA/vxIEDBw4cC472EihPSWyekx++/aFQ/+LAgQMHDhyjLqYNNMxCBu26+evuWXDgwIEDx+Yst8Z/s8KZX19tmr1kPzhw4MCB4xbHfrjWtm2bgWMbhhgONHHgwIEDx4IjD6vl0YHZxc8sGLFv6j70sjhw4MCB4xLH+dE5WVI4b4388nbx7XNw4MCBA8cljra8bVqsvLVrj9pGND7MSnHgwIEDx4Ijf1C70U0Z3gC1kTscOHDgwPEER9totZGCNqwwK5Z5fOGH9+DAgQMHjjXHJrLWXj7lB8jbv3yH+XATBw4cOHDsORKUW8O4fLttmzcLZwzzgDhw4MCBI+bYLJBfSuXv3xDksYyiu8WBAwcOHEeOdtA2u0BatVLx0HAVkpvNHXHgwIEDRzAWTD6WD/JuBSDyq7K6Vct/HeDAgQMHjkWhauMIM9D2tdl5RIkDBw4cONYcsw/PIg6beFzepOXrvv0UDhw4cOBYcGxK3eyyZxOhuBvmW9194cCBAweO9asNKGyGj22Zb4NxeZgPBw4cOHDMOPIIQjtGnJXPtnC2I8vVrw8cOHDgwLEYw7VL5rj5fvZXUPXwEQcOHDhw/DrHeVuz0EPLuglAfODDgQMHDhy/zjErqDlf3ublaxVjRxw4cODAcYkjGQ7OGqqcaT86bHeyunbCgQMHDhzrQEMbbmhL5t1nJhDD8SIOHDhw4Pj5Od+a1ElLIFSmHgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD5klEQVR42u3aS27jMBAFQN//0pntABkr73WTGS9Kq8CRSbEUoNOf1yu+vv66vn/+/Z7n6/n+9nme13/duHDgwIEDx6Gln7d8d38O93yMZ7hk9+gF4MCBAweOQxzvtk82a0NvftQkWD4fPj8jDhw4cOD4BI7NUfNEMUdPnh8HDhw4cHwax6zC1n432bcN+Thw4MCB4zc5NgW7tki3KfbNmlhXaqU4cODAgWMS9aJ07vN/vjLfgQMHDhw4gkSrDbrP27fhs/1u0rIqTocDBw4cONYcs6GBvOWzSpPikYjn3dthCBw4cODAseFIjrEZX5vlSvkh6yD6/Gw4cODAgeMCx2ZQYNP4+c3i4FsgHDhw4MCx5tgcb4OYpIVt62izPg4cOHDgOMWxL7cloToPfm0ZcTMY9/bvAgcOHDhwHOJIvpAPGexHFvJnyEuHqx4XDhw4cOCIY9asSDcsvY2Kj21rahX4ceDAgQPHIY7N8MF+TCFBn7WU6pELHDhw4MCx4DiW9pRNoE0YzsNqHrxx4MCBA8c9jrzkl6d2edmxLQUeHnHAgQMHDhyHONp0Lm8pzQYUNju2JcK3M4M4cODAgWPE0Y4FzCA25b9Z2G5bXD/UTXHgwIEDR/zbG+W/2UO3ZcTZyqv+Gw4cOHDgiE/djpclqV1ekmsH79rfDoewceDAgQPHiKNNtzZlwTZwPpfzbqyPAwcOHDj2HLPGUvu4s8/bZ7sRyHHgwIEDx4xjM3yQPNCmOJivPCtuvp3ywIEDBw4cC4424Zm1oPaPm19tM6yod+LAgQMHjkeOpF00G4PYpFttPpU3vX5YAQcOHDhwrDnaIHcgNYoftB2MmE0m4MCBAweOGxz7wDkLxjnr5p46ycSBAwcOHAuO2ZBcu2WeqiWp42xw4UqrCQcOHDhwPHIkEHlaNUNvh+fafwWKthMOHDhw4BhxJEeaDRDkbaS2HbVpj0XcOHDgwIFjwZEkS0nQTQJtzjobXzjQlMKBAwcOHEc57g2xta2pfTFxSI8DBw4cOA5xtAEvub9l+iqvfBiiaJXhwIEDB45DHJtF8zLfvVm/Iklrt8SBAwcOHCVHniblRbpN2Gtf2Gz9IpHDgQMHDhwlxyxxahs8edrWBsXDrwEHDhw4cJyMaKu8pm1Z5WnYbIhhtgIOHDhw4DjF0Tb+92MK7WFOvar6zePAgQMHjgVHHgjrEbS28ROH8NnKP3wLBw4cOHD8V45Zi+hG6fBU2MaBAwcOHL/PcbaxlKwwq2sOS5M4cODAgeMQx9kGUrtCHhTz8e7ZK8SBAwcOHHuOWV7Thti8vNjCbXYflhdx4MCBA8e/P/kDEECukeZBzNgAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
