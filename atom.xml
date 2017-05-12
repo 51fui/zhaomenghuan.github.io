@@ -4,9 +4,9 @@
   <subtitle>看似寻常最奇崛，成如容易却艰辛。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://wwww.zhaomenghuan.info/"/>
-  <updated>2017-05-08T05:43:46.652Z</updated>
-  <id>http://wwww.zhaomenghuan.info/</id>
+  <link href="https://zhaomenghuan.github.io/"/>
+  <updated>2017-05-12T06:48:01.434Z</updated>
+  <id>https://zhaomenghuan.github.io/</id>
   
   <author>
     <name>赵梦欢</name>
@@ -16,9 +16,246 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux CentOS7 搭建node服务详细教程</title>
+    <link href="https://zhaomenghuan.github.io/2017/05/12/Linux%20CentOS7%20%E6%90%AD%E5%BB%BAnode%E6%9C%8D%E5%8A%A1%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/"/>
+    <id>https://zhaomenghuan.github.io/2017/05/12/Linux CentOS7 搭建node服务详细教程/</id>
+    <published>2017-05-12T06:44:18.000Z</published>
+    <updated>2017-05-12T06:48:01.434Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>近期在准备搭建一个vue.js+node.js全栈开发的社区，之前由于没有云服务器搭建经验，这篇文章做一下相关的记录，后续再深入学习研究。本文不局限于只是流水账式子的记录，会顺便说明一下Linux的相关内容。</p>
+<h2 id="登录Linux云服务器"><a href="#登录Linux云服务器" class="headerlink" title="登录Linux云服务器"></a>登录Linux云服务器</h2><p>至于购买云服务的过程在此不做赘述，各大云服务提供商都有相关的说明文档。当我们买好了云主机，可以通过控制面板登录，也可以使用密码从本地登录。</p>
+<p>Linux或Mac OS用户登录Linux云服务器，直接使用SSH命令进行连接，如：ssh root@Linux云服务器公网IP，然后输入root用户的初始密码，即可完成登录。</p>
+<p>Window系统上 Linux 远程登录客户端有SecureCRT, Putty, SSH Secure Shell等，本文以Putty为例来登录远程服务器。</p>
+<p>下载远程链接软件Putty，参考下载地址：<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank" rel="external">http://www.chiark.greenend.org.uk/~sgtatham/putty/</a></p>
+<p>打开Putty客户端，在PuTTY Configuration 窗口中输入以下内容：<br>Host Name：Linux云服务器的公网IP。<br>Port：云服务器的端口，必须填22。（请确保云主机22端口已开放）<br>Connect type：选择“SSH”。</p>
+<p>全部输入完后，点击“Open”，创建一个新对话。<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mccdn.qcloud.com/img56a5d38a4ffbc.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>在Putty会话窗口中， 输入管理员帐号，按回车键。再输入初始密码，回车完成登录过程。<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://mccdn.qcloud.com/img56a5d47b8b5da.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2 id="Linux-系统目录结构"><a href="#Linux-系统目录结构" class="headerlink" title="Linux 系统目录结构"></a>Linux 系统目录结构</h2><p>登录系统后，在当前命令窗口下输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls /</div></pre></td></tr></table></figure></p>
+<p>结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@centos ~]# ls /</div><div class="line">bin   data  etc   lib    lost+found  mnt  proc  run   srv  tmp  var</div><div class="line">boot  dev   home  lib64  media       opt  root  sbin  sys  usr</div></pre></td></tr></table></figure></p>
+<p>树状目录结构：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://upload-images.jianshu.io/upload_images/1945738-f6dd3886db0687d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>以下是对这些目录的解释：<br><strong>/bin</strong>：bin是Binary的缩写, 这个目录存放着最经常使用的命令。<br><strong>/boot</strong>：这里存放的是启动Linux时使用的一些核心文件，包括一些连接文件以及镜像文件。<br><strong>/dev</strong>：dev是Device(设备)的缩写, 该目录下存放的是Linux的外部设备，在Linux中访问设备的方式和访问文件的方式是相同的。<br><strong>/etc</strong>：这个目录用来存放所有的系统管理所需要的配置文件和子目录。<br><strong>/home</strong>：用户的主目录，在Linux中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的。<br><strong>/lib</strong>：这个目录里存放着系统最基本的动态连接共享库，其作用类似于Windows里的DLL文件。几乎所有的应用程序都需要用到这些共享库。<br><strong>/lost+found</strong>：这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。<br><strong>/media</strong>：linux系统会自动识别一些设备，例如U盘、光驱等等，当识别后，linux会把识别的设备挂载到这个目录下。<br><strong>/mnt</strong>：系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在/mnt/上，然后进入该目录就可以查看光驱里的内容了。<br><strong>/opt</strong>：这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。<br><strong>/proc</strong>：这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all</div></pre></td></tr></table></figure></p>
+<p><strong>/root</strong>：该目录为系统管理员，也称作超级权限者的用户主目录。<br><strong>/sbin</strong>：s就是Super User的意思，这里存放的是系统管理员使用的系统管理程序。<br><strong>/selinux</strong>：这个目录是Redhat/CentOS所特有的目录，Selinux是一个安全机制，类似于windows的防火墙，但是这套机制比较复杂，这个目录就是存放selinux相关的文件的。<br><strong>/srv</strong>：该目录存放一些服务启动之后需要提取的数据。<br><strong>/sys</strong>：这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。sysfs文件系统集成了下面3种文件系统的信息：针对进程信息的proc文件系统、针对设备的devfs文件系统以及针对伪终端的devpts文件系统。该文件系统是内核设备树的一个直观反映。当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。<br><strong>/tmp</strong>：这个目录是用来存放一些临时文件的。<br><strong>/usr</strong>：这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似与windows下的program files目录。<br><strong>/usr/bin</strong>：系统用户使用的应用程序。<br><strong>/usr/sbin</strong>：超级用户使用的比较高级的管理程序和系统守护程序。<br><strong>/usr/src</strong>：内核源代码默认的放置目录。<br><strong>/var</strong>：这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</p>
+<p>在linux系统中，有几个目录是比较重要的，平时需要注意不要误删除或者随意更改内部文件。<br><strong>/etc</strong>： 上边也提到了，这个是系统中的配置文件，如果你更改了该目录下的某个文件可能会导致系统不能启动。<br><strong>/bin, /sbin, /usr/bin, /usr/sbin</strong>: 这是系统预设的执行文件的放置目录，比如 ls 就是在/bin/ls 目录下的。值得提出的是，/bin, /usr/bin 是给系统用户使用的指令（除root外的通用户），而/sbin, /usr/sbin 则是给root使用的指令。<br><strong>/var</strong>： 这是一个非常重要的目录，系统上跑了很多程序，那么每个程序都会有相应的日志产生，而这些日志就被记录到这个目录下，具体在/var/log 目录下，另外mail的预设放置也是在这里。</p>
+<p>了解系统目录结构，对于我们安装管理一些依赖包更加清晰。</p>
+<h2 id="Linux-文件基本属性"><a href="#Linux-文件基本属性" class="headerlink" title="Linux 文件基本属性"></a>Linux 文件基本属性</h2><p>Linux系统是一种典型的多用户系统，不同的用户处于不同的地位，拥有不同的权限。为了保护系统的安全性，Linux系统对不同的用户访问同一文件（包括目录文件）的权限做了不同的规定。</p>
+<p>在Linux中我们可以使用ll或者<code>ls –l</code>命令来显示一个文件的属性以及文件所属的用户和组，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@VM_195_14_centos ~]# ls -l</div><div class="line">total 4</div><div class="line">-rw-------. 1 root root 2523 Apr 21  2016 anaconda-ks.cfg</div></pre></td></tr></table></figure></p>
+<p>实例中，anaconda-ks.cfg文件的第一个属性用”-“表示，”-“在Linux中代表该文件是一个文件。</p>
+<p>在Linux中第一个字符代表这个文件是目录、文件或链接文件，对应规则如下：</p>
+<ul>
+<li>当为[ d ]则是目录</li>
+<li>当为[ - ]则是文件；</li>
+<li>若是[ l ]则表示为链接文档(link file)；</li>
+<li>若是[ b ]则表示为装置文件里面的可供储存的接口设备(可随机存取装置)；</li>
+<li>若是[ c ]则表示为装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)。</li>
+</ul>
+<p>接下来的字符中，以三个为一组，且均为『rwx』 的三个参数的组合。其中，[ r ]代表可读(read)、[ w ]代表可写(write)、[ x ]代表可执行(execute)。 要注意的是，这三个权限的位置不会改变，如果没有权限，就会出现减号[ - ]而已。</p>
+<p>每个文件的属性由左边第一部分的10个字符来确定，如下图：<br>{% image http://upload-images.jianshu.io/upload_images/1945738-a03a98765e603fb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}</p>
+<h3 id="Linux-文件与目录管理"><a href="#Linux-文件与目录管理" class="headerlink" title="Linux 文件与目录管理"></a>Linux 文件与目录管理</h3><p>Linux的目录结构为树状结构，最顶级的目录为根目录 /。</p>
+<p>绝对路径：从根目录 / 写起，如：/usr/share/applications<br>相对路径：使用../或~（/root的简称）。</p>
+<p>处理目录的常用命令：</p>
+<ul>
+<li>ls: 列出目录</li>
+<li>cd：切换目录</li>
+<li>pwd：显示目前的目录</li>
+<li>mkdir：创建一个新的目录</li>
+<li>rmdir：删除一个空的目录</li>
+<li>cp: 复制文件或目录</li>
+<li>rm: 移除文件或目录</li>
+</ul>
+<p>注：可以使用 man [命令] 来查看各个命令的使用文档，如 ：man cp。</p>
+<p>文件内容查看的命令：</p>
+<ul>
+<li>cat  由第一行开始显示文件内容</li>
+<li>tac  从最后一行开始显示，可以看出 tac 是 cat 的倒著写！</li>
+<li>nl   显示的时候，顺道输出行号！</li>
+<li>more 一页一页的显示文件内容</li>
+<li>less 与 more 类似，但是比 more 更好的是，他可以往前翻页！</li>
+<li>head 只看头几行</li>
+<li>tail 只看尾巴几行</li>
+</ul>
+<h2 id="Linux-磁盘管理"><a href="#Linux-磁盘管理" class="headerlink" title="Linux 磁盘管理"></a>Linux 磁盘管理</h2><p>inux磁盘管理常用三个命令为df、du和fdisk。</p>
+<ul>
+<li>df：列出文件系统的整体磁盘使用量</li>
+<li>du：检查磁盘空间使用量</li>
+<li>fdisk：用于磁盘分区</li>
+</ul>
+<p><strong> df 命令 </strong><br>df命令参数功能：检查文件系统的磁盘空间占用情况。可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。<br>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">df [-ahikHTm] [目录或文件名]</div></pre></td></tr></table></figure></p>
+<p>选项与参数：<br>-a ：列出所有的文件系统，包括系统特有的 /proc 等文件系统；<br>-k ：以 KBytes 的容量显示各文件系统；<br>-m ：以 MBytes 的容量显示各文件系统；<br>-h ：以人们较易阅读的 GBytes, MBytes, KBytes 等格式自行显示；<br>-H ：以 M=1000K 取代 M=1024K 的进位方式；<br>-T ：显示文件系统类型, 连同该 partition 的 filesystem 名称 (例如 ext3) 也列出；<br>-i ：不用硬盘容量，而以 inode 的数量来显示</p>
+<p><strong>du命令</strong><br>Linux du命令也是查看使用空间的，但是与df命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看，还是和df命令有一些区别的，这里介绍Linux du命令。<br>语法：<br>du [-ahskm] 文件或目录名称<br>选项与参数：<br>-a ：列出所有的文件与目录容量，因为默认仅统计目录底下的文件量而已。<br>-h ：以人们较易读的容量格式 (G/M) 显示；<br>-s ：列出总量而已，而不列出每个各别的目录占用容量；<br>-S ：不包括子目录下的总计，与 -s 有点差别。<br>-k ：以 KBytes 列出容量显示；<br>-m ：以 MBytes 列出容量显示；</p>
+<h2 id="Linux-vim"><a href="#Linux-vim" class="headerlink" title="Linux vim"></a>Linux vim</h2><p>Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。 vim 则可以说是程序开发者的一项很好用的工具。</p>
+<p><a href="http://www.runoob.com/w3cnote/all-vim-cheatsheat.html" target="_blank" rel="external">史上最全Vim快捷键键位图（入门到进阶）</a></p>
+{% image http://upload-images.jianshu.io/upload_images/1945738-1fe0b909665b1f09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}
+<p><strong>打开文件的命令</strong></p>
+{% image http://upload-images.jianshu.io/upload_images/1945738-43dee391c6bf6a74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}
+<p>基本上 vim 共分为三种模式，分别是命令模式（Command mode），插入模式（Insert mode）和末行模式（Last line mode）。 这三种模式的作用分别是：命令模式、输入模式、末行模式。</p>
+<p><strong>vi/vim三种模式切换</strong><br>{% image http://upload-images.jianshu.io/upload_images/1945738-8a3e2e194c142040.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 'vi/vim三种模式切换' '' %}</p>
+<p><strong>命令模式</strong><br>用户刚刚启动 vi/vim，便进入了命令模式。此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。</p>
+<p>以下是常用的几个命令：<br>i 切换到插入模式，以输入字符。<br>x 删除当前光标所在处的字符。<br>: 切换到底线命令模式，以在最底一行输入命令。</p>
+<p>若想要编辑文本：启动Vim，进入了命令模式，按下i，切换到输入模式。<br>命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令。</p>
+<p>移动光标的位置：<br>{% image http://upload-images.jianshu.io/upload_images/1945738-6ef7c0c3957760d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}</p>
+<p>字符串的复制、删除、粘贴：<br>{% image http://upload-images.jianshu.io/upload_images/1945738-6872cedbde22d898.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}</p>
+<p><strong>输入模式</strong><br>在命令模式下按下i、I、a、A、o、O、r和R中的某一个键就进入了输入模式。<br>在输入模式中，可以使用以下按键：<br>字符按键以及Shift组合，输入字符<br>ENTER，回车键，换行<br>BACK SPACE，退格键，删除光标前一个字符<br>DEL，删除键，删除光标后一个字符<br>方向键，在文本中移动光标<br>HOME/END，移动光标到行首/行尾<br>Page Up/Page Down，上/下翻页<br>Insert，切换光标为输入/替换模式，光标将变成竖线/下划线<br>ESC，退出输入模式，切换到命令模式</p>
+{% image http://upload-images.jianshu.io/upload_images/1945738-bd165fe4e4f95459.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}
+<p><strong>末行模式</strong><br>在命令模式下按下<code>:</code>（英文冒号）就进入了底线命令模式。<br>末行模式可以输入单个或多个字符的命令，可用的命令非常多。<br>在末行模式中，基本的命令有：<br>：q 退出程序<br>：w 保存文件<br>按ESC键可随时退出底线命令模式。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://upload-images.jianshu.io/upload_images/1945738-0ee150287b6c2bcd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p><strong>vim的保存文件和退出命令</strong></p>
+<p><strong>:w</strong> —— 保存编辑后的文件内容，但不退出vim编辑器。这个命令的作用是把内存缓冲区中的数据写到启动vim时指定的文件中。<br><strong>:w!</strong> —— 强制写文件，即强制覆盖原有文件。如果原有文件的访问权限不允许写入文件，例如，原有的文件为只读文件，则可使用这个命令强制写入。但是，这种命令用法仅当用户是文件的属主时才适用，而超级用户则不受此限制。<br><strong>:wq</strong> —— 保存文件内容后退出vim编辑器。这个命令的作用是把内存缓冲区中的数据写到启动vim时指定的文件中，然后退出vim编辑器。另外一种替代的方法是用ZZ命令。<br><strong>:wq!</strong> —— 强制保存文件内容后退出vim编辑器。这个命令的作用是把内存缓冲区中的数据强制写到启动vim时指定的文件中，然后退出vim编辑器。<br><strong>ZZ</strong> —— 使用ZZ命令时，如果文件已经做过编辑处理，则把内存缓冲区中的数据写到启动vim时指定的文件中，然后退出vim编辑器。否则只是退出vim而已。注意，ZZ命令前面无需加冒号“：”，也无需按Enter键。<br><strong>:q</strong> —— 在未做任何编辑处理而准备退出vim时，可以使用此命令。如果已做过编辑处理，则vim不允许用户使用“:q”命令退出，同时还会输出下列警告信息：No write since last change (:quit! overrides)<br><strong>:q!</strong> —— 强制退出vim编辑器，放弃编辑处理的结果。如果确实不需要保存修改后的文件内容，可输入“:q!”命令，强行退出vim编辑器。<br><strong>:w filename</strong> —— 把编辑处理后的结果写到指定的文件中保存<br><strong>:w! filename</strong> —— 把编辑处理后的结果强制保存到指定的文件中，如果文件已经存在，则覆盖现有的文件。<br><strong>:wq! filename</strong> —— 把编辑处理后的结果强制保存到指定的文件中，如果文件已经存在，则覆盖现有文件，并退出vim编辑器。</p>
+<h2 id="Linux-Yum-包管理器"><a href="#Linux-Yum-包管理器" class="headerlink" title="Linux Yum 包管理器"></a>Linux Yum 包管理器</h2><blockquote>
+<p>Yum（全称为 Yellow dog Updater, Modified）是一个在Fedora和RedHat以及CentOS中的<a href="http://baike.baidu.com/item/Shell" target="_blank" rel="external">Shell</a>前端软件包管理器。基于<a href="http://baike.baidu.com/item/RPM" target="_blank" rel="external">RPM</a>包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。</p>
+</blockquote>
+<p><strong>yum 语法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum [options] [command] [package ...]</div></pre></td></tr></table></figure></p>
+<ul>
+<li>options：可选，选项包括-h（帮助），-y（当安装过程提示选择全部为”yes”），-q（不显示安装的过程）等等。</li>
+<li>command：要进行的操作。</li>
+<li>package操作的对象。</li>
+</ul>
+<p><strong>yum常用命令</strong></p>
+<ul>
+<li>1.列出所有可更新的软件清单命令：yum check-update</li>
+<li>2.更新所有软件命令：yum update</li>
+<li>3.仅安装指定的软件命令：yum install <package_name></package_name></li>
+<li>4.仅更新指定的软件命令：yum update <package_name></package_name></li>
+<li>5.列出所有可安裝的软件清单命令：yum list</li>
+<li>6.删除软件包命令：yum remove <package_name></package_name></li>
+<li>7.查找软件包 命令：yum search <keyword></keyword></li>
+<li>8.清除缓存命令:<ul>
+<li>yum clean packages: 清除缓存目录下的软件包</li>
+<li>yum clean headers: 清除缓存目录下的 headers</li>
+<li>yum clean oldheaders: 清除缓存目录下旧的 headers</li>
+<li>yum clean, yum clean all (= yum clean packages; yum clean oldheaders) :清除缓存目录下的软件包及旧的headers</li>
+</ul>
+</li>
+</ul>
+<h2 id="安装及启动nginx"><a href="#安装及启动nginx" class="headerlink" title="安装及启动nginx"></a>安装及启动nginx</h2><p>Nginx (“engine x”) 是一个高性能的 HTTP 和 反向代理服务器，也是一个 IMAP/POP3/SMTP 代理服务器。具有很有特性：</p>
+<ul>
+<li><strong>热部署</strong>：在master管理进程与worker工作进程的分离设计，使的Nginx具有热部署的功能，那么在7×24小时不间断服务的前提下，升级Nginx的可执行文件。也可以在不停止服务的情况下修改配置文件，更换日志文件等功能。</li>
+<li><strong>可以高并发连接</strong>：理论上，Nginx支持的并发连接上限取决于你的内存，10万远未封顶。</li>
+<li><strong>低的内存消耗</strong>：在一般的情况下，10000个非活跃的HTTP Keep-Alive 连接在Nginx中仅消耗2.5M的内存，这也是Nginx支持高并发连接的基础。</li>
+<li><strong>处理响应请求很快</strong>：在正常的情况下，单次请求会得到更快的响应。在高峰期，Nginx可以比其他的Web服务器更快的响应请求。</li>
+<li><strong>具有很高的可靠性</strong>：高可靠性来自其核心框架代码的优秀设计、模块设计的简单性；并且这些模块都非常的稳定。</li>
+</ul>
+<p>yum 安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install  -y nginx</div></pre></td></tr></table></figure></p>
+<p>启动nginx服务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service nginx start</div></pre></td></tr></table></figure></p>
+<p>测试nginx服务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://127.0.0.1</div></pre></td></tr></table></figure></p>
+<p>若结果如下，说明nginx服务正常。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[root@VM_195_14_centos ~]# wget http://127.0.0.1</div><div class="line">--2017-05-11 20:32:34--  http://127.0.0.1/</div><div class="line">Connecting to 127.0.0.1:80... connected.</div><div class="line">HTTP request sent, awaiting response... 200 OK</div><div class="line">Length: 3700 (3.6K) [text/html]</div><div class="line">Saving to: &apos;index.html&apos;</div><div class="line"></div><div class="line">100%[======================================&gt;] 3,700       --.-K/s   in 0s</div><div class="line"></div><div class="line">2017-05-11 20:32:34 (632 MB/s) - &apos;index.html&apos; saved [3700/3700]</div></pre></td></tr></table></figure></p>
+<p>在浏览器中，访问通过CentOS云服务器公网IP查看nginx服务是否正常运行。</p>
+<p><strong>nginx 服务器命令</strong><br>启动nginx：service nginx start<br>访问（nginx默认是80端口）：curl 127.0.0.1<br>nginx配置文件目录：nginx -t<br>重启nginx：service nginx restart<br>停用nginx：service nginx stop</p>
+<h2 id="Linux-源码编译安装node-js"><a href="#Linux-源码编译安装node-js" class="headerlink" title="Linux 源码编译安装node.js"></a>Linux 源码编译安装node.js</h2><p>开篇说了我会尝试建立一个vue.js+node.js全栈开发的交流社区，自然这个站点会基于node.js构建后端。</p>
+<p>Linux下node有多种安装方式，这里我们手工安装官方最新版本。</p>
+<p><strong>1.安装编译环境</strong><br>我的CentOS版本是7.2，安装前先安装编译环境，如gcc编译器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install -y gcc gcc-c++ openssl-devel</div></pre></td></tr></table></figure></p>
+<p>然后执行<code>gcc -v</code>运行正常：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">gcc version 4.8.5 20150623 (Red Hat 4.8.5-11) (GCC)</div></pre></td></tr></table></figure></p>
+<p><strong>2.检查和核对Python版本</strong><br>Node.js环境需要Python2.6以上，我们需要检查，如果不是则需要安装和升级最新版Python。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python</div></pre></td></tr></table></figure></p>
+<p>退出python命令行使用exit() 命令或者Ctrl-D快捷键。</p>
+<p><strong>3.安装最新版本Node.js</strong></p>
+<p>我们将我们的node下载到/usr/local/src文件夹下进行安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/src</div></pre></td></tr></table></figure></p>
+<p>下载：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://nodejs.org/dist/node-latest.tar.gz</div></pre></td></tr></table></figure></p>
+<p>解压：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf node-latest.tar.gz</div></pre></td></tr></table></figure></p>
+<p>进入当前版本进行编译，先通过ls查询解压的文件夹名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@VM_195_14_centos src]# ls</div><div class="line">node-latest.tar.gz  node-v7.10.0</div></pre></td></tr></table></figure></p>
+<p>然后进入node-v7.10.0文件夹进行安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd node-v0.12.7</div><div class="line">./configure</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure></p>
+<p>然后检查node是否正确安装：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node -v</div></pre></td></tr></table></figure></p>
+<p>如果正确打印出版本则正确安装。</p>
+<h2 id="通过Filezilla实现本地Windows上传文件到Linux服务器-从Linux服务器下载文件"><a href="#通过Filezilla实现本地Windows上传文件到Linux服务器-从Linux服务器下载文件" class="headerlink" title="通过Filezilla实现本地Windows上传文件到Linux服务器/从Linux服务器下载文件"></a>通过Filezilla实现本地Windows上传文件到Linux服务器/从Linux服务器下载文件</h2><p>本方法仅适合本地为Windows系统的用户，可实现将本地文件上传至Linux服务器/下载Linux服务器上的文件。本地为Linux系统的用户可直接使用SCP命令进行上传下载。<br>本地安装Filezilla客户端，参考下载地址：<a href="https://www.filezilla.cn/download/client" target="_blank" rel="external">https://www.filezilla.cn/download/client</a></p>
+<p>点击【文件】-【站点管理器】，点击【新站点】按钮，输入以下内容：<br>{% image https://mccdn.qcloud.com/static/img/58132d70663ac9ce5169462eb9ccb944/image.png '' '' %}<br>主机：Linux云服务器的公网IP<br>端口：远程连接端口，默认22<br>协议：选择【SFTP】ssh文件传输协议<br>登录类型：选择正常<br>用户：Linux云服务器的登录用户，默认为root/ubuntu<br>密码：Linux云服务器的登录密码</p>
+<p>点击【连接】按钮，等待连接Linux云服务器。<br>{% image https://mccdn.qcloud.com/static/img/6653190a5e08b34c83d1f3d9ed9a84f6/image.png '' '' %}<br>连接成功后，左侧为本地文件，右侧为服务器端文件。<br>需要上传本地文件至服务器时，在左侧需要上传的文件上右键单击【上传】按钮，文件即可上传到右侧服务器文件目录下；<br>需要下载服务器文件至本地时，在右侧需要下载的文件上右键单击【下载】按钮，文件即可下载到左侧本地文件目录下；</p>
+<h2 id="Linux-Nginx-ssl证书部署"><a href="#Linux-Nginx-ssl证书部署" class="headerlink" title="Linux Nginx ssl证书部署"></a>Linux Nginx ssl证书部署</h2><p>我是在腾讯云上部署的，在这里申请免费的SSL证书：<a href="https://console.qcloud.com/ssl" target="_blank" rel="external">申请免费证书</a>。申请完了后下载证书然后可以利用上面说的Filezilla上传到服务器上，参考这里的文档<a href="https://www.qcloud.com/document/product/400/4143#2.-nginx-.E8.AF.81.E4.B9.A6.E9.83.A8.E7.BD.B2" target="_blank" rel="external">Nginx 证书部署</a>。</p>
+<ul>
+<li>下载解压证书，Nginx文件夹内获得SSL证书文件 1_www.domain.com_bundle.crt 和私钥文件 2_www.domain.com.key,<br>1_www.domain.com_bundle.crt 文件包括两段证书代码 “—–BEGIN CERTIFICATE—–”和“—–END CERTIFICATE—–”,<br>2_www.domain.com.key 文件包括一段私钥代码“—–BEGIN RSA PRIVATE KEY—–”和“—–END RSA PRIVATE KEY—–”。</li>
+<li>将域名 www.domain.com 的证书文件1_www.domain.com_bundle.crt 、私钥文件2_www.domain.com.key保存到同一个目录，例如/usr/share/nginx/conf目录下。</li>
+<li>更新Nginx根目录下conf/nginx.conf 文件。</li>
+</ul>
+<p>这里重点说说更新nginx.conf文件，新手一般不知道nginx.conf的位置，这时候我们就需要使用nginx -t来查找nginx配置文件，并使用vi命令修改该配置文件，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@VM_195_14_centos ~]# nginx -t</div><div class="line">nginx: the configuration file /etc/nginx/nginx.conf syntax is ok</div><div class="line">nginx: configuration file /etc/nginx/nginx.conf test is successful</div></pre></td></tr></table></figure></p>
+<p>打开 vim 修改nginx.conf文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/nginx/nginx.conf</div></pre></td></tr></table></figure></p>
+<p>主要修改server：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">  listen 443;</div><div class="line">  server_name www.domain.com; #填写绑定证书的域名</div><div class="line">  ssl on;</div><div class="line">  ssl_certificate /usr/share/nginx/conf/1_www.domain.com_bundle.crt;</div><div class="line">  ssl_certificate_key /usr/share/nginx/conf/2_www.domain.com.key;</div><div class="line">  ssl_session_timeout 5m;</div><div class="line">  ssl_protocols TLSv1 TLSv1.1 TLSv1.2; #按照这个协议配置</div><div class="line">  ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;#按照这个套件配置  </div><div class="line">  ssl_prefer_server_ciphers on;</div><div class="line">  #其他不修改...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>配置完成后，正确无误的话，重启nginx。就可以使 <a href="https://www.domain.com" target="_blank" rel="external">https://www.domain.com</a> 来访问了。</p>
+<p>注：（配置关键字段）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">配置文件参数</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">listen 443</td>
+<td style="text-align:center">SSL访问端口号为443</td>
+</tr>
+<tr>
+<td style="text-align:center">ssl on</td>
+<td style="text-align:center">启用SSL功能</td>
+</tr>
+<tr>
+<td style="text-align:center">ssl_certificate</td>
+<td style="text-align:center">证书文件</td>
+</tr>
+<tr>
+<td style="text-align:center">ssl_certificate_key</td>
+<td style="text-align:center">私钥文件</td>
+</tr>
+<tr>
+<td style="text-align:center">ssl_protocols</td>
+<td style="text-align:center">使用的协议</td>
+</tr>
+<tr>
+<td style="text-align:center">ssl_ciphers</td>
+<td style="text-align:center">配置加密套件，写法遵循openssl标准</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Linux-node服务nginx配置"><a href="#Linux-node服务nginx配置" class="headerlink" title="Linux node服务nginx配置"></a>Linux node服务nginx配置</h2><p>前面我们已经正确下载了node环境，这里我们写一个简单的node程序开启一个node服务。</p>
+{% image http://upload-images.jianshu.io/upload_images/1945738-456d2a56f7fcc3f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}
+<p>使用<code>vim /var/www/index.js</code>在/var/www文件夹下建立一个index.js，起一个最简单的服务。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">const http = require(&apos;http&apos;);</div><div class="line">const server = http.createServer((req, res) =&gt; &#123;</div><div class="line">  res.statusCode = 200;</div><div class="line">  res.setHeader(&apos;Content-Type&apos;, &apos;text/plain&apos;);</div><div class="line">  res.end(&apos;Hello World\n&apos;);</div><div class="line">&#125;);</div><div class="line">server.listen(3000, () =&gt; &#123;</div><div class="line">  console.log(`node server is now running/`);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>nodejs默认端口是3000，需要配置nginx反向代理到nodejs的3000端口。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen       443;</div><div class="line">    server_name  www.domain.com;</div><div class="line">    ssl on;</div><div class="line">    ssl_certificate /usr/share/nginx/conf/1_www.vuenode.com_bundle.crt;</div><div class="line">    ssl_certificate_key /usr/share/nginx/conf/2_www.vuenode.com.key;</div><div class="line">    ssl_session_timeout 5m;</div><div class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</div><div class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</div><div class="line">    ssl_prefer_server_ciphers on;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://127.0.0.1:3000;</div><div class="line">        proxy_http_version 1.1;</div><div class="line">        proxy_set_header Upgrade $http_upgrade;</div><div class="line">        proxy_set_header Connection ‘upgrade’;</div><div class="line">        proxy_set_header Host $host;</div><div class="line">        proxy_cache_bypass $http_upgrade;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后重启nginx及打开node服务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">service nginx restart</div><div class="line">node /var/www/index</div></pre></td></tr></table></figure></p>
+<p>我们打开浏览器，页面页面会出现 hello world，至此我们的node服务已经搭建完成。这里需要说明的是我们容易产生一个误区的是 node 提供了 https 模块，我们在构建node服务的时候是使用 http 模块还是 https 模块，如果我们之间使用 node 做服务，不经过nginx反向代理，确实是可以使用 https 模块，不过这里我们使用了nginx对外部访问的时候是使用 https，服务器内部使用http模块即可。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.runoob.com/linux/linux-tutorial.html" target="_blank" rel="external">Linux 教程</a><br><a href="http://www.tuicool.com/articles/NZz2ii" target="_blank" rel="external">Linux学习笔记：5.Vim编辑器(2)：三种模式和命令</a><br><a href="http://www.tuicool.com/articles/VV7nim6" target="_blank" rel="external">我们为什么要用nginx，nginx的特点</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;近期在准备搭建一个vue.js+node.js全栈开发的社区，之前由于没有云服务器搭建经验，这篇文章做一下相关的记录，后续再深入学习研究。本
+    
+    </summary>
+    
+      <category term="node学习之路" scheme="https://zhaomenghuan.github.io/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="Linux" scheme="https://zhaomenghuan.github.io/tags/Linux/"/>
+    
+      <category term="CentOS7" scheme="https://zhaomenghuan.github.io/tags/CentOS7/"/>
+    
+      <category term="node.js" scheme="https://zhaomenghuan.github.io/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>cordova研习笔记(二) —— cordova 6.X 源码解读</title>
-    <link href="http://wwww.zhaomenghuan.info/2017/05/04/cordova%E7%A0%94%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%BA%8C)%E2%80%94%E2%80%94cordova%206.X%20%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
-    <id>http://wwww.zhaomenghuan.info/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/</id>
+    <link href="https://zhaomenghuan.github.io/2017/05/04/cordova%E7%A0%94%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%BA%8C)%E2%80%94%E2%80%94cordova%206.X%20%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%EF%BC%88%E4%B8%8A%EF%BC%89/"/>
+    <id>https://zhaomenghuan.github.io/2017/05/04/cordova研习笔记(二)——cordova 6.X 源码解读（上）/</id>
     <published>2017-05-03T16:00:00.000Z</published>
     <updated>2017-05-08T05:43:46.652Z</updated>
     
@@ -111,19 +348,19 @@
     
     </summary>
     
-      <category term="hybrid App深入浅出研究" scheme="http://wwww.zhaomenghuan.info/categories/hybrid-App%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%A0%94%E7%A9%B6/"/>
+      <category term="hybrid App深入浅出研究" scheme="https://zhaomenghuan.github.io/categories/hybrid-App%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%A0%94%E7%A9%B6/"/>
     
     
-      <category term="cordova" scheme="http://wwww.zhaomenghuan.info/tags/cordova/"/>
+      <category term="cordova" scheme="https://zhaomenghuan.github.io/tags/cordova/"/>
     
-      <category term="hybrid App" scheme="http://wwww.zhaomenghuan.info/tags/hybrid-App/"/>
+      <category term="hybrid App" scheme="https://zhaomenghuan.github.io/tags/hybrid-App/"/>
     
   </entry>
   
   <entry>
     <title>cordova研习笔记(一) —— 初试牛刀之cordova.js概要</title>
-    <link href="http://wwww.zhaomenghuan.info/2017/04/26/cordova%E7%A0%94%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20%E2%80%94%E2%80%94%E5%88%9D%E8%AF%95%E7%89%9B%E5%88%80%E4%B9%8Bcordova.js%E6%A6%82%E8%A6%81/"/>
-    <id>http://wwww.zhaomenghuan.info/2017/04/26/cordova研习笔记(一) ——初试牛刀之cordova.js概要/</id>
+    <link href="https://zhaomenghuan.github.io/2017/04/26/cordova%E7%A0%94%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)%20%E2%80%94%E2%80%94%E5%88%9D%E8%AF%95%E7%89%9B%E5%88%80%E4%B9%8Bcordova.js%E6%A6%82%E8%A6%81/"/>
+    <id>https://zhaomenghuan.github.io/2017/04/26/cordova研习笔记(一) ——初试牛刀之cordova.js概要/</id>
     <published>2017-04-25T16:00:00.000Z</published>
     <updated>2017-05-07T12:21:31.941Z</updated>
     
@@ -365,21 +602,21 @@
     
     </summary>
     
-      <category term="hybrid App深入浅出研究" scheme="http://wwww.zhaomenghuan.info/categories/hybrid-App%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%A0%94%E7%A9%B6/"/>
+      <category term="hybrid App深入浅出研究" scheme="https://zhaomenghuan.github.io/categories/hybrid-App%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%A0%94%E7%A9%B6/"/>
     
     
-      <category term="cordova" scheme="http://wwww.zhaomenghuan.info/tags/cordova/"/>
+      <category term="cordova" scheme="https://zhaomenghuan.github.io/tags/cordova/"/>
     
-      <category term="hybrid App" scheme="http://wwww.zhaomenghuan.info/tags/hybrid-App/"/>
+      <category term="hybrid App" scheme="https://zhaomenghuan.github.io/tags/hybrid-App/"/>
     
   </entry>
   
   <entry>
     <title>node学习之路（二）—— Node.js 连接 MongoDB</title>
-    <link href="http://wwww.zhaomenghuan.info/2017/04/12/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94Node.js%20%E8%BF%9E%E6%8E%A5%20MongoDB/"/>
-    <id>http://wwww.zhaomenghuan.info/2017/04/12/node学习之路（二）—Node.js 连接 MongoDB/</id>
+    <link href="https://zhaomenghuan.github.io/2017/04/12/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94Node.js%20%E8%BF%9E%E6%8E%A5%20MongoDB/"/>
+    <id>https://zhaomenghuan.github.io/2017/04/12/node学习之路（二）—Node.js 连接 MongoDB/</id>
     <published>2017-04-11T16:00:00.000Z</published>
-    <updated>2017-05-03T16:16:20.837Z</updated>
+    <updated>2017-05-12T06:47:43.004Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前对于node的学习，一直只是停留在一种帮前端打辅助的层面，没有深入去研究，是时候需要改变一下了，近来找工作诸多不顺心（找个两情相悦的真不容易啊~），多数对前端有后端语言经验和工作年限有要求，对于我这个应届生真心不是一般的尴尬，所以先继续深入学习一下node咯，本文主要记录一下学习MongoDB数据库相关的内容（属于比较流水账的文章），弥补一下自己的知识空白。这两天收到两个offer心情还是不错的，就是有点难抉择。</p>
 <h2 id="mongodb的安装"><a href="#mongodb的安装" class="headerlink" title="mongodb的安装"></a>mongodb的安装</h2><h3 id="什么是MongoDB"><a href="#什么是MongoDB" class="headerlink" title="什么是MongoDB ?"></a>什么是MongoDB ?</h3><blockquote>
@@ -934,21 +1171,21 @@
     
     </summary>
     
-      <category term="node学习之路" scheme="http://wwww.zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <category term="node学习之路" scheme="https://zhaomenghuan.github.io/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="JavaScript" scheme="http://wwww.zhaomenghuan.info/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://zhaomenghuan.github.io/tags/JavaScript/"/>
     
-      <category term="nodejs" scheme="http://wwww.zhaomenghuan.info/tags/nodejs/"/>
+      <category term="node.js" scheme="https://zhaomenghuan.github.io/tags/node-js/"/>
     
-      <category term="mongodb" scheme="http://wwww.zhaomenghuan.info/tags/mongodb/"/>
+      <category term="mongodb" scheme="https://zhaomenghuan.github.io/tags/mongodb/"/>
     
   </entry>
   
   <entry>
     <title>Angular系列学习笔记（二）—— 基于gulp构建Angular单页面应用</title>
-    <link href="http://wwww.zhaomenghuan.info/2017/04/01/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8Egulp%E6%9E%84%E5%BB%BAAngular%E5%8D%95%E9%A1%B5%E9%9D%A2%E5%BA%94%E7%94%A8/"/>
-    <id>http://wwww.zhaomenghuan.info/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/</id>
+    <link href="https://zhaomenghuan.github.io/2017/04/01/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8Egulp%E6%9E%84%E5%BB%BAAngular%E5%8D%95%E9%A1%B5%E9%9D%A2%E5%BA%94%E7%94%A8/"/>
+    <id>https://zhaomenghuan.github.io/2017/04/01/Angular系列学习笔记（二）—基于gulp构建Angular单页面应用/</id>
     <published>2017-03-31T16:00:00.000Z</published>
     <updated>2017-05-03T16:13:59.547Z</updated>
     
@@ -959,7 +1196,7 @@
 <p>这是在创建一个 package.json 文件，定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。详细介绍可以看阮一峰老师的这篇文章：<a href="http://javascript.ruanyifeng.com/nodejs/packagejson.html" target="_blank" rel="external">package.json文件</a>。</p>
 <h4 id="安装-gulp"><a href="#安装-gulp" class="headerlink" title="安装 gulp"></a>安装 gulp</h4><p>全局安装 gulp<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp -g</div></pre></td></tr></table></figure></p>
 <p>作为项目的开发依赖（devDependencies）安装：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp -D</div></pre></td></tr></table></figure></p>
-<p>这两者的区别可以看看这篇文章：<a href="http://zhaomenghuan.github.io/#!/blog/20161115" target="_blank" rel="external">npm 常用命令详解</a>。执行完这一步，目录下就多了一个node_modules文件夹，里面都是依赖的模块。一般来说，我们可能会在其它项目中使用的工具，如这里的gulp我们会先进行全局按照，这样会在本地有一个“仓库”，以后再用的时候直接下载到项目中岂可，避免每次不必要的下载等待。另外，dependencies字段指定了项目运行所依赖的模块，devDependencies指定项目开发所需要的模块。下载模块的时候注意区分，分清楚依赖模块的差异有助于我们后期优化代码，避免不必要的模块引入到项目最终源码中，造成代码打包过大的问题。</p>
+<p>这两者的区别可以看看这篇文章：<a href="http://zhaomenghuan.github.io/#!/blog/20161115">npm 常用命令详解</a>。执行完这一步，目录下就多了一个node_modules文件夹，里面都是依赖的模块。一般来说，我们可能会在其它项目中使用的工具，如这里的gulp我们会先进行全局按照，这样会在本地有一个“仓库”，以后再用的时候直接下载到项目中岂可，避免每次不必要的下载等待。另外，dependencies字段指定了项目运行所依赖的模块，devDependencies指定项目开发所需要的模块。下载模块的时候注意区分，分清楚依赖模块的差异有助于我们后期优化代码，避免不必要的模块引入到项目最终源码中，造成代码打包过大的问题。</p>
 <h4 id="创建-gulpfile-js-文件"><a href="#创建-gulpfile-js-文件" class="headerlink" title="创建 gulpfile.js 文件"></a>创建 gulpfile.js 文件</h4><p>在项目根目录下创建一个名为 gulpfile.js 的文件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// 将你的默认的任务代码放在这</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <h4 id="运行gulp"><a href="#运行gulp" class="headerlink" title="运行gulp"></a>运行gulp</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp 或 gulp <span class="keyword">default</span></div></pre></td></tr></table></figure>
 <p>默认的名为 default 的任务（task）将会被运行，在这里，这个任务并未做任何事情。<br>想要单独执行特定的任务（task），请输入 gulp <task> <othertask>，例如在gulpfile.js里面添加如下代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'console'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hello gulp'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></othertask></task></p>
@@ -1102,23 +1339,23 @@
     
     </summary>
     
-      <category term="Angular系列学习笔记" scheme="http://wwww.zhaomenghuan.info/categories/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Angular系列学习笔记" scheme="https://zhaomenghuan.github.io/categories/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="angular" scheme="http://wwww.zhaomenghuan.info/tags/angular/"/>
+      <category term="angular" scheme="https://zhaomenghuan.github.io/tags/angular/"/>
     
-      <category term="gulp" scheme="http://wwww.zhaomenghuan.info/tags/gulp/"/>
+      <category term="gulp" scheme="https://zhaomenghuan.github.io/tags/gulp/"/>
     
-      <category term="angular-ui-router" scheme="http://wwww.zhaomenghuan.info/tags/angular-ui-router/"/>
+      <category term="angular-ui-router" scheme="https://zhaomenghuan.github.io/tags/angular-ui-router/"/>
     
-      <category term="angular-material" scheme="http://wwww.zhaomenghuan.info/tags/angular-material/"/>
+      <category term="angular-material" scheme="https://zhaomenghuan.github.io/tags/angular-material/"/>
     
   </entry>
   
   <entry>
     <title>Angular系列学习笔记（一）—— 聊聊angular的模块化</title>
-    <link href="http://wwww.zhaomenghuan.info/2017/03/06/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E8%81%8A%E8%81%8Aangular%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
-    <id>http://wwww.zhaomenghuan.info/2017/03/06/Angular系列学习笔记（一）—聊聊angular的模块化/</id>
+    <link href="https://zhaomenghuan.github.io/2017/03/06/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E8%81%8A%E8%81%8Aangular%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+    <id>https://zhaomenghuan.github.io/2017/03/06/Angular系列学习笔记（一）—聊聊angular的模块化/</id>
     <published>2017-03-05T16:00:00.000Z</published>
     <updated>2017-05-03T16:14:05.284Z</updated>
     
@@ -1276,29 +1513,29 @@
     
     </summary>
     
-      <category term="Angular系列学习笔记" scheme="http://wwww.zhaomenghuan.info/categories/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Angular系列学习笔记" scheme="https://zhaomenghuan.github.io/categories/Angular%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="JavaScript" scheme="http://wwww.zhaomenghuan.info/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://zhaomenghuan.github.io/tags/JavaScript/"/>
     
-      <category term="angular" scheme="http://wwww.zhaomenghuan.info/tags/angular/"/>
+      <category term="angular" scheme="https://zhaomenghuan.github.io/tags/angular/"/>
     
-      <category term="vue.js" scheme="http://wwww.zhaomenghuan.info/tags/vue-js/"/>
+      <category term="vue.js" scheme="https://zhaomenghuan.github.io/tags/vue-js/"/>
     
-      <category term="模块化" scheme="http://wwww.zhaomenghuan.info/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+      <category term="模块化" scheme="https://zhaomenghuan.github.io/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
     
-      <category term="$scope" scheme="http://wwww.zhaomenghuan.info/tags/scope/"/>
+      <category term="$scope" scheme="https://zhaomenghuan.github.io/tags/scope/"/>
     
-      <category term="依赖注入" scheme="http://wwww.zhaomenghuan.info/tags/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/"/>
+      <category term="依赖注入" scheme="https://zhaomenghuan.github.io/tags/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/"/>
     
-      <category term="service" scheme="http://wwww.zhaomenghuan.info/tags/service/"/>
+      <category term="service" scheme="https://zhaomenghuan.github.io/tags/service/"/>
     
   </entry>
   
   <entry>
     <title>npm 常用命令详解</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/11/15/npm%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/11/15/npm 常用命令详解/</id>
+    <link href="https://zhaomenghuan.github.io/2016/11/15/npm%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://zhaomenghuan.github.io/2016/11/15/npm 常用命令详解/</id>
     <published>2016-11-14T16:00:00.000Z</published>
     <updated>2017-05-03T16:16:30.034Z</updated>
     
@@ -1512,17 +1749,17 @@
     
     </summary>
     
-      <category term="node学习之路" scheme="http://wwww.zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <category term="node学习之路" scheme="https://zhaomenghuan.github.io/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="npm" scheme="http://wwww.zhaomenghuan.info/tags/npm/"/>
+      <category term="npm" scheme="https://zhaomenghuan.github.io/tags/npm/"/>
     
   </entry>
   
   <entry>
     <title>探秘JavaScript中的六个字符</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/10/12/%E6%8E%A2%E7%A7%98JavaScript%E4%B8%AD%E7%9A%84%E5%85%AD%E4%B8%AA%E5%AD%97%E7%AC%A6/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/10/12/探秘JavaScript中的六个字符/</id>
+    <link href="https://zhaomenghuan.github.io/2016/10/12/%E6%8E%A2%E7%A7%98JavaScript%E4%B8%AD%E7%9A%84%E5%85%AD%E4%B8%AA%E5%AD%97%E7%AC%A6/"/>
+    <id>https://zhaomenghuan.github.io/2016/10/12/探秘JavaScript中的六个字符/</id>
     <published>2016-10-11T16:00:00.000Z</published>
     <updated>2017-05-04T06:56:34.531Z</updated>
     
@@ -1595,19 +1832,19 @@
     
     </summary>
     
-      <category term="JavaScript进阶学习" scheme="http://wwww.zhaomenghuan.info/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="JavaScript进阶学习" scheme="https://zhaomenghuan.github.io/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="JavaScript" scheme="http://wwww.zhaomenghuan.info/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://zhaomenghuan.github.io/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>node学习之路（一）—— 网络请求</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/09/29/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/09/29/node学习之路（一）—网络请求/</id>
+    <link href="https://zhaomenghuan.github.io/2016/09/29/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
+    <id>https://zhaomenghuan.github.io/2016/09/29/node学习之路（一）—网络请求/</id>
     <published>2016-09-28T16:00:00.000Z</published>
-    <updated>2017-05-03T16:16:12.383Z</updated>
+    <updated>2017-05-12T06:47:42.935Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一直以来想深入学习一下node，一来是自己目前也没有什么时间去学习服务器端语言，但是有时候又想自己撸一下服务器端，本着爱折腾的精神开始写一写关于node的文章记录学习心得。本系列文章不会过多去讲解node安装、基本API等内容，而是通过一些实例去总结常用用法。本文主要讲解node网络操作的相关内容，node中的网络操作依赖于http模块，http模块提供了两种使用方式：</p>
 <ul>
@@ -1702,7 +1939,7 @@
 <li><a href="https://nodejs.org/docs/latest-v5.x/api/" target="_blank" rel="external">nodejs官网API文档</a></li>
 <li><a href="http://www.imooc.com/learn/348" target="_blank" rel="external">进击Node.js基础（一）</a></li>
 <li><a href="http://nodeapi.ucdok.com/#/api/" target="_blank" rel="external">Node.js v4.2.4 文档 中文版</a></li>
-<li>文章代码源码下载：<a href="http://zhaomenghuan.github.io/resource/blog/demo/20160929.zip" target="_blank" rel="external">http://zhaomenghuan.github.io/resource/blog/demo/20160929.zip</a></li>
+<li>文章代码源码下载：<a href="http://zhaomenghuan.github.io/resource/blog/demo/20160929.zip">http://zhaomenghuan.github.io/resource/blog/demo/20160929.zip</a></li>
 </ul>
 </blockquote>
 ]]></content>
@@ -1713,27 +1950,27 @@
     
     </summary>
     
-      <category term="node学习之路" scheme="http://wwww.zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <category term="node学习之路" scheme="https://zhaomenghuan.github.io/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="JavaScript" scheme="http://wwww.zhaomenghuan.info/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://zhaomenghuan.github.io/tags/JavaScript/"/>
     
-      <category term="nodejs" scheme="http://wwww.zhaomenghuan.info/tags/nodejs/"/>
+      <category term="node.js" scheme="https://zhaomenghuan.github.io/tags/node-js/"/>
     
-      <category term="http" scheme="http://wwww.zhaomenghuan.info/tags/http/"/>
+      <category term="http" scheme="https://zhaomenghuan.github.io/tags/http/"/>
     
-      <category term="url" scheme="http://wwww.zhaomenghuan.info/tags/url/"/>
+      <category term="url" scheme="https://zhaomenghuan.github.io/tags/url/"/>
     
-      <category term="Query String" scheme="http://wwww.zhaomenghuan.info/tags/Query-String/"/>
+      <category term="Query String" scheme="https://zhaomenghuan.github.io/tags/Query-String/"/>
     
-      <category term="爬虫" scheme="http://wwww.zhaomenghuan.info/tags/%E7%88%AC%E8%99%AB/"/>
+      <category term="爬虫" scheme="https://zhaomenghuan.github.io/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
   <entry>
     <title>录音文件与Base64编码相互转换的方法</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/08/17/%E5%BD%95%E9%9F%B3%E6%96%87%E4%BB%B6%E4%B8%8EBase64%E7%BC%96%E7%A0%81%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/08/17/录音文件与Base64编码相互转换的方法/</id>
+    <link href="https://zhaomenghuan.github.io/2016/08/17/%E5%BD%95%E9%9F%B3%E6%96%87%E4%BB%B6%E4%B8%8EBase64%E7%BC%96%E7%A0%81%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>https://zhaomenghuan.github.io/2016/08/17/录音文件与Base64编码相互转换的方法/</id>
     <published>2016-08-16T16:00:00.000Z</published>
     <updated>2017-05-03T16:17:28.185Z</updated>
     
@@ -1767,23 +2004,23 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="https://zhaomenghuan.github.io/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="https://zhaomenghuan.github.io/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="https://zhaomenghuan.github.io/tags/html5plus/"/>
     
-      <category term="base64" scheme="http://wwww.zhaomenghuan.info/tags/base64/"/>
+      <category term="base64" scheme="https://zhaomenghuan.github.io/tags/base64/"/>
     
-      <category term="录音" scheme="http://wwww.zhaomenghuan.info/tags/%E5%BD%95%E9%9F%B3/"/>
+      <category term="录音" scheme="https://zhaomenghuan.github.io/tags/%E5%BD%95%E9%9F%B3/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript进阶学习（三）—— 基于html5 File API文件操作</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/08/16/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8Ehtml5%20File%20API%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/08/16/JavaScript进阶学习（三）—基于html5 File API文件操作/</id>
+    <link href="https://zhaomenghuan.github.io/2016/08/16/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8Ehtml5%20File%20API%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
+    <id>https://zhaomenghuan.github.io/2016/08/16/JavaScript进阶学习（三）—基于html5 File API文件操作/</id>
     <published>2016-08-15T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:01.555Z</updated>
     
@@ -1943,27 +2180,27 @@
     
     </summary>
     
-      <category term="JavaScript进阶学习" scheme="http://wwww.zhaomenghuan.info/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="JavaScript进阶学习" scheme="https://zhaomenghuan.github.io/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="JavaScript" scheme="http://wwww.zhaomenghuan.info/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://zhaomenghuan.github.io/tags/JavaScript/"/>
     
-      <category term="blob" scheme="http://wwww.zhaomenghuan.info/tags/blob/"/>
+      <category term="blob" scheme="https://zhaomenghuan.github.io/tags/blob/"/>
     
-      <category term="File" scheme="http://wwww.zhaomenghuan.info/tags/File/"/>
+      <category term="File" scheme="https://zhaomenghuan.github.io/tags/File/"/>
     
-      <category term="FileReader" scheme="http://wwww.zhaomenghuan.info/tags/FileReader/"/>
+      <category term="FileReader" scheme="https://zhaomenghuan.github.io/tags/FileReader/"/>
     
-      <category term="DataURI" scheme="http://wwww.zhaomenghuan.info/tags/DataURI/"/>
+      <category term="DataURI" scheme="https://zhaomenghuan.github.io/tags/DataURI/"/>
     
-      <category term="URL" scheme="http://wwww.zhaomenghuan.info/tags/URL/"/>
+      <category term="URL" scheme="https://zhaomenghuan.github.io/tags/URL/"/>
     
   </entry>
   
   <entry>
     <title>mui组件通用CSS类</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/08/05/mui%E7%BB%84%E4%BB%B6%E9%80%9A%E7%94%A8CSS%E7%B1%BB/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/08/05/mui组件通用CSS类/</id>
+    <link href="https://zhaomenghuan.github.io/2016/08/05/mui%E7%BB%84%E4%BB%B6%E9%80%9A%E7%94%A8CSS%E7%B1%BB/"/>
+    <id>https://zhaomenghuan.github.io/2016/08/05/mui组件通用CSS类/</id>
     <published>2016-08-04T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:57.990Z</updated>
     
@@ -2015,19 +2252,19 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="https://zhaomenghuan.github.io/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="https://zhaomenghuan.github.io/tags/mui/"/>
     
-      <category term="css" scheme="http://wwww.zhaomenghuan.info/tags/css/"/>
+      <category term="css" scheme="https://zhaomenghuan.github.io/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（七）— 基于native.js的文件系统管理功能实现</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/08/01/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8Enative.js%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/08/01/mui初级入门教程（七）—基于native.js的文件系统管理功能实现/</id>
+    <link href="https://zhaomenghuan.github.io/2016/08/01/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8Enative.js%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://zhaomenghuan.github.io/2016/08/01/mui初级入门教程（七）—基于native.js的文件系统管理功能实现/</id>
     <published>2016-07-31T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:18.980Z</updated>
     
@@ -2106,21 +2343,21 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="https://zhaomenghuan.github.io/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="https://zhaomenghuan.github.io/tags/mui/"/>
     
-      <category term="nativejs" scheme="http://wwww.zhaomenghuan.info/tags/nativejs/"/>
+      <category term="nativejs" scheme="https://zhaomenghuan.github.io/tags/nativejs/"/>
     
-      <category term="android" scheme="http://wwww.zhaomenghuan.info/tags/android/"/>
+      <category term="android" scheme="https://zhaomenghuan.github.io/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>HTML5+ APP页面传参详解</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/07/28/HTML5+APP%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%8F%82%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/07/28/HTML5+APP页面传参详解/</id>
+    <link href="https://zhaomenghuan.github.io/2016/07/28/HTML5+APP%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%8F%82%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://zhaomenghuan.github.io/2016/07/28/HTML5+APP页面传参详解/</id>
     <published>2016-07-27T16:00:00.000Z</published>
     <updated>2017-05-03T16:14:50.701Z</updated>
     
@@ -2167,21 +2404,21 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="https://zhaomenghuan.github.io/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="https://zhaomenghuan.github.io/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="https://zhaomenghuan.github.io/tags/html5plus/"/>
     
-      <category term="页面传参" scheme="http://wwww.zhaomenghuan.info/tags/%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%8F%82/"/>
+      <category term="页面传参" scheme="https://zhaomenghuan.github.io/tags/%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%8F%82/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（六）— 模板页面实现原理及多端适配指南</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/07/26/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89%E2%80%94%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%A4%9A%E7%AB%AF%E9%80%82%E9%85%8D%E6%8C%87%E5%8D%97/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/07/26/mui初级入门教程（六）—模板页面实现原理及多端适配指南/</id>
+    <link href="https://zhaomenghuan.github.io/2016/07/26/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89%E2%80%94%E6%A8%A1%E6%9D%BF%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%8F%8A%E5%A4%9A%E7%AB%AF%E9%80%82%E9%85%8D%E6%8C%87%E5%8D%97/"/>
+    <id>https://zhaomenghuan.github.io/2016/07/26/mui初级入门教程（六）—模板页面实现原理及多端适配指南/</id>
     <published>2016-07-25T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:37.346Z</updated>
     
@@ -2258,25 +2495,25 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="https://zhaomenghuan.github.io/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="https://zhaomenghuan.github.io/tags/mui/"/>
     
-      <category term="webview" scheme="http://wwww.zhaomenghuan.info/tags/webview/"/>
+      <category term="webview" scheme="https://zhaomenghuan.github.io/tags/webview/"/>
     
-      <category term="template" scheme="http://wwww.zhaomenghuan.info/tags/template/"/>
+      <category term="template" scheme="https://zhaomenghuan.github.io/tags/template/"/>
     
-      <category term="os" scheme="http://wwww.zhaomenghuan.info/tags/os/"/>
+      <category term="os" scheme="https://zhaomenghuan.github.io/tags/os/"/>
     
-      <category term="多端适配" scheme="http://wwww.zhaomenghuan.info/tags/%E5%A4%9A%E7%AB%AF%E9%80%82%E9%85%8D/"/>
+      <category term="多端适配" scheme="https://zhaomenghuan.github.io/tags/%E5%A4%9A%E7%AB%AF%E9%80%82%E9%85%8D/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript进阶学习（二）—— 基于原型链继承的js工具库的实现方法</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/07/03/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%BB%A7%E6%89%BF%E7%9A%84js%E5%B7%A5%E5%85%B7%E5%BA%93%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/07/03/JavaScript进阶学习（二）—基于原型链继承的js工具库的实现方法/</id>
+    <link href="https://zhaomenghuan.github.io/2016/07/03/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E5%9F%BA%E4%BA%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%BB%A7%E6%89%BF%E7%9A%84js%E5%B7%A5%E5%85%B7%E5%BA%93%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95/"/>
+    <id>https://zhaomenghuan.github.io/2016/07/03/JavaScript进阶学习（二）—基于原型链继承的js工具库的实现方法/</id>
     <published>2016-07-02T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:07.999Z</updated>
     
@@ -2397,21 +2634,21 @@
     
     </summary>
     
-      <category term="JavaScript进阶学习" scheme="http://wwww.zhaomenghuan.info/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="JavaScript进阶学习" scheme="https://zhaomenghuan.github.io/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="JavaScript" scheme="http://wwww.zhaomenghuan.info/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://zhaomenghuan.github.io/tags/JavaScript/"/>
     
-      <category term="原型链" scheme="http://wwww.zhaomenghuan.info/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+      <category term="原型链" scheme="https://zhaomenghuan.github.io/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
     
-      <category term="jQuery" scheme="http://wwww.zhaomenghuan.info/tags/jQuery/"/>
+      <category term="jQuery" scheme="https://zhaomenghuan.github.io/tags/jQuery/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（五）—  聊聊即时通讯（IM），基于环信 web im SDK</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/06/15/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89%E2%80%94%E8%81%8A%E8%81%8A%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%EF%BC%88IM%EF%BC%89%EF%BC%8C%E5%9F%BA%E4%BA%8E%E7%8E%AF%E4%BF%A1%20web%20im%20SDK/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/06/15/mui初级入门教程（五）—聊聊即时通讯（IM），基于环信 web im SDK/</id>
+    <link href="https://zhaomenghuan.github.io/2016/06/15/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89%E2%80%94%E8%81%8A%E8%81%8A%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF%EF%BC%88IM%EF%BC%89%EF%BC%8C%E5%9F%BA%E4%BA%8E%E7%8E%AF%E4%BF%A1%20web%20im%20SDK/"/>
+    <id>https://zhaomenghuan.github.io/2016/06/15/mui初级入门教程（五）—聊聊即时通讯（IM），基于环信 web im SDK/</id>
     <published>2016-06-14T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:32.881Z</updated>
     
@@ -2627,27 +2864,27 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="https://zhaomenghuan.github.io/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="https://zhaomenghuan.github.io/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="https://zhaomenghuan.github.io/tags/html5plus/"/>
     
-      <category term="环信" scheme="http://wwww.zhaomenghuan.info/tags/%E7%8E%AF%E4%BF%A1/"/>
+      <category term="环信" scheme="https://zhaomenghuan.github.io/tags/%E7%8E%AF%E4%BF%A1/"/>
     
-      <category term="im" scheme="http://wwww.zhaomenghuan.info/tags/im/"/>
+      <category term="im" scheme="https://zhaomenghuan.github.io/tags/im/"/>
     
-      <category term="页面传值" scheme="http://wwww.zhaomenghuan.info/tags/%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC/"/>
+      <category term="页面传值" scheme="https://zhaomenghuan.github.io/tags/%E9%A1%B5%E9%9D%A2%E4%BC%A0%E5%80%BC/"/>
     
-      <category term="缓存" scheme="http://wwww.zhaomenghuan.info/tags/%E7%BC%93%E5%AD%98/"/>
+      <category term="缓存" scheme="https://zhaomenghuan.github.io/tags/%E7%BC%93%E5%AD%98/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（四）—  再谈webview，从小白变“大神”！</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/06/05/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E5%86%8D%E8%B0%88webview%EF%BC%8C%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%8F%98%E2%80%9C%E5%A4%A7%E7%A5%9E%E2%80%9D%EF%BC%81/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/06/05/mui初级入门教程（四）—再谈webview，从小白变“大神”！/</id>
+    <link href="https://zhaomenghuan.github.io/2016/06/05/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89%E2%80%94%E5%86%8D%E8%B0%88webview%EF%BC%8C%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%8F%98%E2%80%9C%E5%A4%A7%E7%A5%9E%E2%80%9D%EF%BC%81/"/>
+    <id>https://zhaomenghuan.github.io/2016/06/05/mui初级入门教程（四）—再谈webview，从小白变“大神”！/</id>
     <published>2016-06-04T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:41.335Z</updated>
     
@@ -2880,21 +3117,21 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="https://zhaomenghuan.github.io/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="https://zhaomenghuan.github.io/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="https://zhaomenghuan.github.io/tags/html5plus/"/>
     
-      <category term="webview" scheme="http://wwww.zhaomenghuan.info/tags/webview/"/>
+      <category term="webview" scheme="https://zhaomenghuan.github.io/tags/webview/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（三）— html5+ XMLHttpRequest 与mui ajax用法详解</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/05/29/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94html5+%20XMLHttpRequest%20%E4%B8%8Emui%20ajax%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/05/29/mui初级入门教程（三）—html5+ XMLHttpRequest 与mui ajax用法详解/</id>
+    <link href="https://zhaomenghuan.github.io/2016/05/29/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89%E2%80%94html5+%20XMLHttpRequest%20%E4%B8%8Emui%20ajax%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://zhaomenghuan.github.io/2016/05/29/mui初级入门教程（三）—html5+ XMLHttpRequest 与mui ajax用法详解/</id>
     <published>2016-05-28T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:23.500Z</updated>
     
@@ -2926,7 +3163,7 @@
 <p>在服务器端添加响应头<code>Access-Control-Allow-Origin</code>，使用<code>XMLHttpRequest</code>对象请求。值得注意的是，正常情况下的 XMLHttpRequest 是只发送一次请求的，但是跨域问题下很可能是会发送两次的请求（预发送）。</p>
 <p>PHP:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header(<span class="string">'Access-Control-Allow-Origin: *'</span>);</div></pre></td></tr></table></figure></p>
 <p>java:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">response.addHeader( <span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span> );</div></pre></td></tr></table></figure></p>
-<p>大家不妨将上面那个例子中的地址换成这个试试：<a href="http://zhaomenghuan.github.io/api/blog.json" target="_blank" rel="external">http://zhaomenghuan.github.io/api/blog.json</a><br>（仅用于学习测试，禁止直接用于任何不经征求本人同意的站点）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">			<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">			xhr.open(<span class="string">"get"</span>, <span class="string">"http://zhaomenghuan.github.io/api/blog.json"</span>, <span class="literal">true</span>);</div><div class="line">			xhr.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="keyword">this</span>.responseText);</div><div class="line">			    <span class="keyword">var</span> data = <span class="built_in">JSON</span>.parse(<span class="keyword">this</span>.responseText);</div><div class="line">			    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> data)&#123;</div><div class="line">			    	<span class="built_in">document</span>.write(data[i].pageId + <span class="string">'：'</span> + data[i].title+<span class="string">"&lt;br /&gt;"</span>)</div><div class="line">			    &#125;</div><div class="line">			&#125;;</div><div class="line">			xhr.onerror = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">		        alert(<span class="string">'error making the request.'</span>);</div><div class="line">		    &#125;;	</div><div class="line">			xhr.send();		</div><div class="line">		<span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>大家不妨将上面那个例子中的地址换成这个试试：<a href="http://zhaomenghuan.github.io/api/blog.json">http://zhaomenghuan.github.io/api/blog.json</a><br>（仅用于学习测试，禁止直接用于任何不经征求本人同意的站点）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">			<span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">			xhr.open(<span class="string">"get"</span>, <span class="string">"http://zhaomenghuan.github.io/api/blog.json"</span>, <span class="literal">true</span>);</div><div class="line">			xhr.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="keyword">this</span>.responseText);</div><div class="line">			    <span class="keyword">var</span> data = <span class="built_in">JSON</span>.parse(<span class="keyword">this</span>.responseText);</div><div class="line">			    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> data)&#123;</div><div class="line">			    	<span class="built_in">document</span>.write(data[i].pageId + <span class="string">'：'</span> + data[i].title+<span class="string">"&lt;br /&gt;"</span>)</div><div class="line">			    &#125;</div><div class="line">			&#125;;</div><div class="line">			xhr.onerror = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">		        alert(<span class="string">'error making the request.'</span>);</div><div class="line">		    &#125;;	</div><div class="line">			xhr.send();		</div><div class="line">		<span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>哈哈，执行完这段代码你会发现，你能够查看到我博客的列表，所以大家是不是懂了些什么， CORS能否跨域实现需要服务器端支持，我们这里能够收到信息，是因为github上的资源是支持CORS访问的，这和框架无关，很多人以为用了框架就可以跨域，这都是不正确的理解，框架只是封装了一些方法，让我们使用更加方便，能不能跨域还是取决于我们服务器端的访问权限。这里顺便说一下很多人用mui会发现在浏览器端会报错，在app环境能够访问，这是因为mui依赖html5+ XMLHttpRequest网络请求模块，后面会详细讲到。</p>
 <h3 id="Jsonp，只适用于get请求"><a href="#Jsonp，只适用于get请求" class="headerlink" title="Jsonp，只适用于get请求"></a>Jsonp，<strong>只适用于get请求</strong></h3><p><code>Jsonp</code>的跨域不是用<code>XMLHttpRequest</code>实现的，而是一个<code>script</code>标签，<code>script</code>是可以跨域的，回调函数作为<code>get</code>参数传入请求里。</p>
 <p>原理很简单，比如你在A域名请求B域名：</p>
@@ -2938,12 +3175,12 @@
 <p>B域名中node服务器：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);  </div><div class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);  </div><div class="line">  </div><div class="line"><span class="keyword">var</span> data = &#123;</div><div class="line">	<span class="string">'name'</span>: <span class="string">'zhaomenghuan'</span>, </div><div class="line">	<span class="string">'age'</span>: <span class="string">'22'</span></div><div class="line">&#125;;</div><div class="line">  </div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;  </div><div class="line">	<span class="comment">// 将url字符串转换成Url对象</span></div><div class="line">	<span class="keyword">var</span> params = url.parse(req.url, <span class="literal">true</span>);  </div><div class="line">	<span class="built_in">console</span>.log(params);</div><div class="line">	<span class="comment">// 查询参数</span></div><div class="line">	<span class="keyword">if</span>(params.query)&#123;</div><div class="line">		<span class="comment">// 根据附件条件查询</span></div><div class="line">		<span class="keyword">if</span>(params.query.userid === <span class="string">'001'</span>)&#123;</div><div class="line">			<span class="comment">// 判断是否为jsonp方式请求，若是则使用jsonp方式，否则为普通web方式</span></div><div class="line">			<span class="keyword">if</span> (params.query.callback) &#123;  </div><div class="line">				<span class="keyword">var</span> resurlt =  params.query.callback + <span class="string">'('</span> + <span class="built_in">JSON</span>.stringify(data) + <span class="string">')'</span>;</div><div class="line">				res.end(resurlt);  </div><div class="line">			&#125; <span class="keyword">else</span> &#123;  </div><div class="line">				res.end(<span class="built_in">JSON</span>.stringify(data));</div><div class="line">			&#125;</div><div class="line">		&#125; </div><div class="line">	&#125;      </div><div class="line">&#125;).listen(<span class="number">8888</span>);</div></pre></td></tr></table></figure></p>
 <p>这样我们就可以在A域名下跨域请求，当然我们经常看到很多框架如jquery对jsonp进行了进一步封装，但是基本原理同上面。这里给出两个例子：</p>
 <ul>
-<li><a href="http://zhaomenghuan.github.io/demo/translation/native-JavaScript.html" target="_blank" rel="external">native-JavaScript实现</a></li>
-<li><a href="http://zhaomenghuan.github.io/demo/translation/mui-jsonp.html" target="_blank" rel="external">mui-jsonp实现</a></li>
+<li><a href="http://zhaomenghuan.github.io/demo/translation/native-JavaScript.html">native-JavaScript实现</a></li>
+<li><a href="http://zhaomenghuan.github.io/demo/translation/mui-jsonp.html">mui-jsonp实现</a></li>
 </ul>
 <p>总之，不论是<code>XMLHttpRequest</code>的跨域，还是<code>Jsonp</code>，都是需要请求的网站服务器端提供支持，在愿意分享给你数据的情况下你才能得到。在对方没有提供支持的情况下，你是取不到它的数据的。当然跨域的解决方案有很多种，由于本人没有实践过，没有实践就没有发言权，这里给大家贴一个帖子，自己跨域自行验证，<a href="https://segmentfault.com/a/1190000004518374#articleHeader3" target="_blank" rel="external">浅谈浏览器端JavaScript跨域解决方法</a>。</p>
 <h3 id="html5-XMLHttpRequest网络请求"><a href="#html5-XMLHttpRequest网络请求" class="headerlink" title="html5+ XMLHttpRequest网络请求"></a>html5+ XMLHttpRequest网络请求</h3><p>上面我们花了很大篇幅讲解了<code>JavaScript  XMLHttpRequest</code>对象，而且也简单的讲解了同源策略和跨域请求的常用方法，我们注意到无论是<code>JavaScript  XMLHttpRequest</code>还是<code>jsonp</code>都需要通过服务器端的支持才能实现跨域，另外还有几种也有一定的局限性，所以总还是让人觉得美中不足。<code>html5+</code>提供了一个<code>XMLHttpRequest</code>模块，在<code>APP</code>端很完美的解决了这种问题，而且提供了和<code>JavaScript  XMLHttpRequest</code>对象用法类似的一系列属性方法。由于本文的重在在于讲解<code>html5+ XMLHttpRequest</code>,所以前面的<code>JavaScript  XMLHttpRequest</code>相关的属性方法只是初略介绍了一下，下面重点介绍<code>html5+ XMLHttpRequest</code>模块。</p>
-<h4 id="适用范围："><a href="#适用范围：" class="headerlink" title="适用范围："></a>适用范围：</h4><p>由于<code>html5+ XMLHttpRequest</code>是一种拓展方案，所以需要底层支持，基于<code>html5+ XMLHttpRequest</code>的方法不能用于非<code>5+</code>环境，如果对这些概念不清楚的欢迎先阅读我之前写的文章<strong><a href="http://zhaomenghuan.github.io/#!/blog/20160515" target="_blank" rel="external">mui初级入门教程（一）— 菜鸟入手mui的学习路线</a></strong>。</p>
+<h4 id="适用范围："><a href="#适用范围：" class="headerlink" title="适用范围："></a>适用范围：</h4><p>由于<code>html5+ XMLHttpRequest</code>是一种拓展方案，所以需要底层支持，基于<code>html5+ XMLHttpRequest</code>的方法不能用于非<code>5+</code>环境，如果对这些概念不清楚的欢迎先阅读我之前写的文章<strong><a href="http://zhaomenghuan.github.io/#!/blog/20160515">mui初级入门教程（一）— 菜鸟入手mui的学习路线</a></strong>。</p>
 <p>我们用<code>hbuilder</code>新建一个app工程，然后运行下面的代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"initial-scale=1.0, maximum-scale=1.0, user-scalable=no"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">			<span class="built_in">document</span>.addEventListener(<span class="string">'plusready'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="keyword">var</span> xhr = <span class="keyword">new</span> plus.net.XMLHttpRequest();</div><div class="line">				xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">					<span class="keyword">switch</span> ( xhr.readyState ) &#123;</div><div class="line">						<span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">							<span class="built_in">console</span>.log( <span class="string">"xhr请求已初始化"</span> );</div><div class="line">						<span class="keyword">break</span>;</div><div class="line">						<span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">							<span class="built_in">console</span>.log( <span class="string">"xhr请求已打开"</span> );</div><div class="line">						<span class="keyword">break</span>;</div><div class="line">						<span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">							<span class="built_in">console</span>.log( <span class="string">"xhr请求已发送"</span> );</div><div class="line">						<span class="keyword">break</span>;</div><div class="line">						<span class="keyword">case</span> <span class="number">3</span>:</div><div class="line">							<span class="built_in">console</span>.log( <span class="string">"xhr请求已响应"</span>);</div><div class="line">							<span class="keyword">break</span>;</div><div class="line">						<span class="keyword">case</span> <span class="number">4</span>:</div><div class="line">							<span class="keyword">if</span> ( xhr.status == <span class="number">200</span> ) &#123;</div><div class="line">								alert( <span class="string">"xhr请求成功："</span>+xhr.responseText );</div><div class="line">							&#125; <span class="keyword">else</span> &#123;</div><div class="line">								<span class="built_in">console</span>.log( <span class="string">"xhr请求失败："</span>+xhr.readyState );</div><div class="line">							&#125;</div><div class="line">							<span class="keyword">break</span>;</div><div class="line">						<span class="keyword">default</span> :</div><div class="line">							<span class="keyword">break</span>;</div><div class="line">					&#125;</div><div class="line">				&#125;</div><div class="line">				xhr.open(<span class="string">"GET"</span>, <span class="string">"https://www.baidu.com/"</span>);</div><div class="line">				xhr.send();</div><div class="line">			&#125;, <span class="literal">false</span> );</div><div class="line">		<span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>我们会发现最后弹出了弹框，里面写有百度首页的代码。</p>
 <h4 id="5-XMLHttpRequest对象"><a href="#5-XMLHttpRequest对象" class="headerlink" title="5+ XMLHttpRequest对象"></a>5+ XMLHttpRequest对象</h4><p>创建一个<code>XMLHttpRequest</code> 对象，对象创建时不触发任何时间和网络请求，需和<code>open</code>，<code>send</code>方法配合使用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> plus.net.XMLHttpRequest();</div><div class="line">xhr.open(method, url);</div><div class="line">xhr.send();</div></pre></td></tr></table></figure></p>
@@ -3032,7 +3269,7 @@
 <p><strong>mui.get( url [,data] [,success] )</strong></p>
 </blockquote>
 <p><code>mui.getJSON()</code>方法是在<code>mui.get()</code>方法基础上的更进一步简化，限定返回<code>json</code>格式的数据，其它参数和<code>mui.get()</code>方法一致，如上获得新闻列表的代码换成<code>mui.getJSON()</code>方法后，更为简洁，如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mui.getJSON(<span class="string">'http://server-name/list.php'</span>,</div><div class="line">	&#123;<span class="attr">category</span>:<span class="string">'news'</span>&#125;,</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">		<span class="comment">//获得服务器响应</span></div><div class="line">		...</div><div class="line">	&#125;</div><div class="line">);</div></pre></td></tr></table></figure></p>
-<p>mui在getJSON基础上封装了一个jsonp插件，具体dem可以参考这里：<a href="http://zhaomenghuan.github.io/demo/translation/mui-jsonp.html" target="_blank" rel="external">mui-jsonp实现有道词典翻译</a></p>
+<p>mui在getJSON基础上封装了一个jsonp插件，具体dem可以参考这里：<a href="http://zhaomenghuan.github.io/demo/translation/mui-jsonp.html">mui-jsonp实现有道词典翻译</a></p>
 <blockquote>
 <p>注：初学者肯对于GET与POST的区别不是很清楚，这里不做详细介绍，若要深入了解请查看：<a href="https://segmentfault.com/a/1190000004829968" target="_blank" rel="external">GET，POST — 简述</a></p>
 </blockquote>
@@ -3116,7 +3353,7 @@
 <p>其中最感兴趣且以前没有接触过的一个方法是createDocumentFragment()方法，书中介绍说：在更新少量节点的时候可以直接向document.body节点中添加，但是当要向document中添加大量数据是，如果直接添加这些新节点，这个过程非常缓慢，因为每添加一个节点都会调用父节点的appendChild()方法，为了解决这个问题，可以创建一个文档碎片，把所有的新节点附加其上，然后把文档碎片一次性添加到document中。—— <a href="http://www.cnblogs.com/yunfour/archive/2011/06/21/2085911.html" target="_blank" rel="external">document的createDocumentFragment()方法</a></p>
 <h4 id="页面传值"><a href="#页面传值" class="headerlink" title="页面传值"></a>页面传值</h4><p>我们点击了列表，我们会进入一个详情页，我们肯定是想知道我们究竟点了哪一个我们想把一些数据传入到详情页面，这里我们使用了<code>mui.openWindow()</code>方法中的拓展参数<code>extras</code>传入几个值，在详情页面通过<code>plus.webview.currentWebview</code>获取：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mui.plusReady(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> self = plus.webview.currentWebview();</div><div class="line">	<span class="keyword">var</span> musicId = self.musicId;</div><div class="line">	<span class="keyword">var</span> audioUrl = self.audioUrl;</div><div class="line">	<span class="built_in">document</span>.write(<span class="string">"musicId:"</span> + musicId + <span class="string">"&lt;br /&gt;"</span>);</div><div class="line">	<span class="built_in">document</span>.write(<span class="string">"audioUrl:"</span> + audioUrl);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>这是在页面初始化时，通过扩展参数<code>extras</code>传值；另外还有页面已创建，通过自定义事件传值，参考mui官网中<a href="http://dev.dcloud.net.cn/mui/event/#customevent" target="_blank" rel="external">自定义事件</a>的介绍，这里先不讲得太多，后面会专门花时间详细讲解相关细节。</p>
-<h4 id="jsonp实现"><a href="#jsonp实现" class="headerlink" title="jsonp实现"></a>jsonp实现</h4><p>由于前面已经详细讲解，这里就不再赘述，只给出一个基本的demo：<a href="http://zhaomenghuan.github.io/utils/music.html" target="_blank" rel="external">jsonp获取网易云音乐</a>。</p>
+<h4 id="jsonp实现"><a href="#jsonp实现" class="headerlink" title="jsonp实现"></a>jsonp实现</h4><p>由于前面已经详细讲解，这里就不再赘述，只给出一个基本的demo：<a href="http://zhaomenghuan.github.io/utils/music.html">jsonp获取网易云音乐</a>。</p>
 <p>当我们写到这里，发现这篇依然是长长的一篇干货，很多内容摘自文档，主要是为了新手可以详细去了解整个流程。其实还有很多没有写出来，限于篇幅还是后面再写吧！由于代码在文章中写得很详细，工程代码先不给出来，最后整个系列写完了再放出来吧！</p>
 <h2 id="随便聊聊"><a href="#随便聊聊" class="headerlink" title="随便聊聊"></a>随便聊聊</h2><p>这段时间在技术上花得时间确实太多，刚刚和女朋友在图书馆学习，她和我开个玩笑，我在忙着做作业因为不喜欢被打扰，然后就觉得很烦躁，然后就聊着聊着她说和我分手，我不知道她是不是认真的，只是觉得空空的，自从走上代码这条路，我已经失去太多东西，我不想失去女朋友，毕竟谈了三年，我是真的爱她，写完这个就去找她道歉吧！还有要向环头道歉，昨天可能说话有点直接，不小心伤到他了，后来想想真的可能是我太较真，他只是想玩玩程序，我何必那种执着呢？如果环头看到这篇博客，希望你可以原谅哥，我只是不想让你走弯路，或许每个都应该自己去把握自己的人生，我们不必去干涉。</p>
 <hr>
@@ -3129,25 +3366,25 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="https://zhaomenghuan.github.io/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="https://zhaomenghuan.github.io/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="https://zhaomenghuan.github.io/tags/html5plus/"/>
     
-      <category term="XMLHttpRequest" scheme="http://wwww.zhaomenghuan.info/tags/XMLHttpRequest/"/>
+      <category term="XMLHttpRequest" scheme="https://zhaomenghuan.github.io/tags/XMLHttpRequest/"/>
     
-      <category term="ajax" scheme="http://wwww.zhaomenghuan.info/tags/ajax/"/>
+      <category term="ajax" scheme="https://zhaomenghuan.github.io/tags/ajax/"/>
     
-      <category term="懒加载" scheme="http://wwww.zhaomenghuan.info/tags/%E6%87%92%E5%8A%A0%E8%BD%BD/"/>
+      <category term="懒加载" scheme="https://zhaomenghuan.github.io/tags/%E6%87%92%E5%8A%A0%E8%BD%BD/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（二）— html5+ webview 底部栏用法详解</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/05/19/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94html5+%20webview%20%E5%BA%95%E9%83%A8%E6%A0%8F%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/05/19/mui初级入门教程（二）—html5+ webview 底部栏用法详解/</id>
+    <link href="https://zhaomenghuan.github.io/2016/05/19/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94html5+%20webview%20%E5%BA%95%E9%83%A8%E6%A0%8F%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://zhaomenghuan.github.io/2016/05/19/mui初级入门教程（二）—html5+ webview 底部栏用法详解/</id>
     <published>2016-05-18T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:28.094Z</updated>
     
@@ -3277,21 +3514,21 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="https://zhaomenghuan.github.io/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="https://zhaomenghuan.github.io/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="https://zhaomenghuan.github.io/tags/html5plus/"/>
     
-      <category term="webview" scheme="http://wwww.zhaomenghuan.info/tags/webview/"/>
+      <category term="webview" scheme="https://zhaomenghuan.github.io/tags/webview/"/>
     
   </entry>
   
   <entry>
     <title>mui初级入门教程（一）— 小白入手mui的学习路线</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/05/15/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E5%B0%8F%E7%99%BD%E5%85%A5%E6%89%8Bmui%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/05/15/mui初级入门教程（一）—小白入手mui的学习路线/</id>
+    <link href="https://zhaomenghuan.github.io/2016/05/15/mui%E5%88%9D%E7%BA%A7%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E5%B0%8F%E7%99%BD%E5%85%A5%E6%89%8Bmui%E7%9A%84%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
+    <id>https://zhaomenghuan.github.io/2016/05/15/mui初级入门教程（一）—小白入手mui的学习路线/</id>
     <published>2016-05-14T16:00:00.000Z</published>
     <updated>2017-05-03T16:15:13.126Z</updated>
     
@@ -3326,7 +3563,7 @@
 <li>流应用开发指南：<a href="http://ask.dcloud.net.cn/article/406" target="_blank" rel="external">http://ask.dcloud.net.cn/article/406</a></li>
 </ul>
 <h3 id="其他学习资源"><a href="#其他学习资源" class="headerlink" title="其他学习资源"></a>其他学习资源</h3><ul>
-<li><a href="http://zhaomenghuan.github.io/" target="_blank" rel="external">小青年博客</a></li>
+<li><a href="http://zhaomenghuan.github.io/">小青年博客</a></li>
 <li><a href="http://dcloud.apk00.com" target="_blank" rel="external">0Hich的网校视频</a></li>
 <li><a href="http://www.dongyixueyuan.com/" target="_blank" rel="external">东翌学院视频</a></li>
 <li><a href="http://edu.51cto.com/course/course_id-5086.html" target="_blank" rel="external">51CTO学院-张伟芝老师视频</a></li>
@@ -3353,7 +3590,7 @@
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本文没有给出任何实际代码，只是根据很多朋友的一些疑惑谈了谈自己的看法，所以不一定很全面，大家可以参考官方文档去详细了解细节。从今天开始我会写一个mui的系列教程。在此承诺，每周至少会保证更新一篇文章。如果有朋友有与之相关的优秀学习资源可以给我推荐，联系邮箱：<code>zhaomenghuan@foxmail.com</code> 。</p>
 <p>文章原始地址是我博客地址：</p>
 <blockquote>
-<p><a href="http://zhaomenghuan.github.io" target="_blank" rel="external">http://zhaomenghuan.github.io</a></p>
+<p><a href="http://zhaomenghuan.github.io">http://zhaomenghuan.github.io</a></p>
 </blockquote>
 <p>写文章不容易，也许写这些代码就几分钟的事，写一篇大家好接受的文章或许需要几天的酝酿，然后加上几天的码字，累并快乐着。如果文章对您有帮助请我喝杯咖啡吧！</p>
 ]]></content>
@@ -3364,25 +3601,25 @@
     
     </summary>
     
-      <category term="MUI从入门到精通" scheme="http://wwww.zhaomenghuan.info/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+      <category term="MUI从入门到精通" scheme="https://zhaomenghuan.github.io/categories/MUI%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
     
     
-      <category term="mui" scheme="http://wwww.zhaomenghuan.info/tags/mui/"/>
+      <category term="mui" scheme="https://zhaomenghuan.github.io/tags/mui/"/>
     
-      <category term="html5plus" scheme="http://wwww.zhaomenghuan.info/tags/html5plus/"/>
+      <category term="html5plus" scheme="https://zhaomenghuan.github.io/tags/html5plus/"/>
     
   </entry>
   
   <entry>
     <title>webpack入门详解</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/04/22/webpack%E5%85%A5%E9%97%A8%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/04/22/webpack入门详解/</id>
+    <link href="https://zhaomenghuan.github.io/2016/04/22/webpack%E5%85%A5%E9%97%A8%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://zhaomenghuan.github.io/2016/04/22/webpack入门详解/</id>
     <published>2016-04-21T16:00:00.000Z</published>
     <updated>2017-05-03T16:16:38.650Z</updated>
     
     <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>上一篇文章里面讲到前端模块化的基本概念，同时用webpack进行打包演示了一个基础的hello world实例，webpack的内容肯定不止那么多，在这篇文章里面我会详细介绍webpack的使用细节。同时，会结合vue.js完成一个更加实用的例子。如果你还没有看上一篇内容，建议你先阅读相关的内容，再看本篇文章效果会更好。</p>
 <blockquote>
-<p>小伙伴戳这里 → <strong><a href="http://zhaomenghuan.github.io/#!/blog/20160415" target="_blank" rel="external">浅析前端模块化</a></strong></p>
+<p>小伙伴戳这里 → <strong><a href="http://zhaomenghuan.github.io/#!/blog/20160415">浅析前端模块化</a></strong></p>
 </blockquote>
 <h2 id="webpack插件详解"><a href="#webpack插件详解" class="headerlink" title="webpack插件详解"></a>webpack插件详解</h2><p>在讲解插件之前我们先说明一下接下来的实例的目录结构如下：</p>
 <ul>
@@ -3478,17 +3715,17 @@
     
     </summary>
     
-      <category term="node学习之路" scheme="http://wwww.zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <category term="node学习之路" scheme="https://zhaomenghuan.github.io/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="webpack" scheme="http://wwww.zhaomenghuan.info/tags/webpack/"/>
+      <category term="webpack" scheme="https://zhaomenghuan.github.io/tags/webpack/"/>
     
   </entry>
   
   <entry>
     <title>浅析前端模块化</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/04/15/%E6%B5%85%E6%9E%90%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/04/15/浅析前端模块化/</id>
+    <link href="https://zhaomenghuan.github.io/2016/04/15/%E6%B5%85%E6%9E%90%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+    <id>https://zhaomenghuan.github.io/2016/04/15/浅析前端模块化/</id>
     <published>2016-04-14T16:00:00.000Z</published>
     <updated>2017-05-03T16:17:56.877Z</updated>
     
@@ -3588,19 +3825,19 @@
     
     </summary>
     
-      <category term="JavaScript进阶学习" scheme="http://wwww.zhaomenghuan.info/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="JavaScript进阶学习" scheme="https://zhaomenghuan.github.io/categories/JavaScript%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="webpack" scheme="http://wwww.zhaomenghuan.info/tags/webpack/"/>
+      <category term="前端模块化" scheme="https://zhaomenghuan.github.io/tags/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
     
-      <category term="前端模块化" scheme="http://wwww.zhaomenghuan.info/tags/%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
+      <category term="webpack" scheme="https://zhaomenghuan.github.io/tags/webpack/"/>
     
   </entry>
   
   <entry>
     <title>走近github王国，git入门教程</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/04/01/%E8%B5%B0%E8%BF%91github%E7%8E%8B%E5%9B%BD%EF%BC%8Cgit%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/04/01/走近github王国，git入门教程/</id>
+    <link href="https://zhaomenghuan.github.io/2016/04/01/%E8%B5%B0%E8%BF%91github%E7%8E%8B%E5%9B%BD%EF%BC%8Cgit%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
+    <id>https://zhaomenghuan.github.io/2016/04/01/走近github王国，git入门教程/</id>
     <published>2016-03-31T16:00:00.000Z</published>
     <updated>2017-05-03T16:18:57.151Z</updated>
     
@@ -3758,19 +3995,19 @@
     
     </summary>
     
-      <category term="node学习之路" scheme="http://wwww.zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <category term="node学习之路" scheme="https://zhaomenghuan.github.io/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="git" scheme="http://wwww.zhaomenghuan.info/tags/git/"/>
+      <category term="git" scheme="https://zhaomenghuan.github.io/tags/git/"/>
     
-      <category term="github" scheme="http://wwww.zhaomenghuan.info/tags/github/"/>
+      <category term="github" scheme="https://zhaomenghuan.github.io/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>基于JavaScript的桌面应用入门</title>
-    <link href="http://wwww.zhaomenghuan.info/2016/03/28/%E5%9F%BA%E4%BA%8EJavaScript%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E5%85%A5%E9%97%A8/"/>
-    <id>http://wwww.zhaomenghuan.info/2016/03/28/基于JavaScript的桌面应用入门/</id>
+    <link href="https://zhaomenghuan.github.io/2016/03/28/%E5%9F%BA%E4%BA%8EJavaScript%E7%9A%84%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8%E5%85%A5%E9%97%A8/"/>
+    <id>https://zhaomenghuan.github.io/2016/03/28/基于JavaScript的桌面应用入门/</id>
     <published>2016-03-27T16:00:00.000Z</published>
     <updated>2017-05-07T12:40:03.284Z</updated>
     
@@ -3857,14 +4094,14 @@
     
     </summary>
     
-      <category term="node学习之路" scheme="http://wwww.zhaomenghuan.info/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <category term="node学习之路" scheme="https://zhaomenghuan.github.io/categories/node%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
     
     
-      <category term="vue.js" scheme="http://wwww.zhaomenghuan.info/tags/vue-js/"/>
+      <category term="vue.js" scheme="https://zhaomenghuan.github.io/tags/vue-js/"/>
     
-      <category term="electron" scheme="http://wwww.zhaomenghuan.info/tags/electron/"/>
+      <category term="electron" scheme="https://zhaomenghuan.github.io/tags/electron/"/>
     
-      <category term="markdown" scheme="http://wwww.zhaomenghuan.info/tags/markdown/"/>
+      <category term="markdown" scheme="https://zhaomenghuan.github.io/tags/markdown/"/>
     
   </entry>
   
