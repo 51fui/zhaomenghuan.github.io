@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-2495778247699812",
-            enable_page_level_ads: true
-        });
-    </script>
     
 
     
@@ -37,8 +30,8 @@
 <meta property="og:image" content="https://mccdn.qcloud.com/img56a5d38a4ffbc.png">
 <meta property="og:image" content="https://mccdn.qcloud.com/img56a5d47b8b5da.png">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1945738-f6dd3886db0687d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1945738-0ee150287b6c2bcd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-05-12T07:03:55.077Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1945738-0ee150287b6c2bcd.png">
+<meta property="og:updated_time" content="2017-05-17T09:13:52.942Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux CentOS7 搭建node服务详细教程">
 <meta name="twitter:description" content="前言近期在准备搭建一个vue.js+node.js全栈开发的社区，之前由于没有云服务器搭建经验，这篇文章做一下相关的记录，后续再深入学习研究。本文不局限于只是流水账式的记录，会顺便说明一下Linux的相关内容。 登录Linux云服务器至于购买云服务的过程在此不做赘述，各大云服务提供商都有相关的说明文档。当我们买好了云主机，可以通过控制面板登录，也可以使用密码从本地登录。 Linux或Mac OS用">
@@ -252,7 +245,8 @@
 <li>若是[ c ]则表示为装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)。</li>
 </ul>
 <p>接下来的字符中，以三个为一组，且均为『rwx』 的三个参数的组合。其中，[ r ]代表可读(read)、[ w ]代表可写(write)、[ x ]代表可执行(execute)。 要注意的是，这三个权限的位置不会改变，如果没有权限，就会出现减号[ - ]而已。</p>
-<p>每个文件的属性由左边第一部分的10个字符来确定，如下图：<br>{% image http://upload-images.jianshu.io/upload_images/1945738-a03a98765e603fb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}</p>
+<p>每个文件的属性由左边第一部分的10个字符来确定，如下图：</p>
+{% image http://upload-images.jianshu.io/upload_images/1945738-a03a98765e603fb4.png '' '' %}
 <h3 id="Linux-文件与目录管理"><a href="#Linux-文件与目录管理" class="headerlink" title="Linux 文件与目录管理"></a>Linux 文件与目录管理</h3><p>Linux的目录结构为树状结构，最顶级的目录为根目录 /。</p>
 <p>绝对路径：从根目录 / 写起，如：/usr/share/applications<br>相对路径：使用../或~（/root的简称）。</p>
 <p>处理目录的常用命令：</p>
@@ -287,23 +281,23 @@
 <p><strong>du命令</strong><br>Linux du命令也是查看使用空间的，但是与df命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看，还是和df命令有一些区别的，这里介绍Linux du命令。<br>语法：<br>du [-ahskm] 文件或目录名称<br>选项与参数：<br>-a ：列出所有的文件与目录容量，因为默认仅统计目录底下的文件量而已。<br>-h ：以人们较易读的容量格式 (G/M) 显示；<br>-s ：列出总量而已，而不列出每个各别的目录占用容量；<br>-S ：不包括子目录下的总计，与 -s 有点差别。<br>-k ：以 KBytes 列出容量显示；<br>-m ：以 MBytes 列出容量显示；</p>
 <h2 id="Linux-vim"><a href="#Linux-vim" class="headerlink" title="Linux vim"></a>Linux vim</h2><p>Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。简单的来说， vi 是老式的字处理器，不过功能已经很齐全了，但是还是有可以进步的地方。 vim 则可以说是程序开发者的一项很好用的工具。</p>
 <p><a href="http://www.runoob.com/w3cnote/all-vim-cheatsheat.html" target="_blank" rel="external">史上最全Vim快捷键键位图（入门到进阶）</a></p>
-{% image http://upload-images.jianshu.io/upload_images/1945738-1fe0b909665b1f09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}
+{% image http://upload-images.jianshu.io/upload_images/1945738-1fe0b909665b1f09.png '' '' %}
 <p><strong>打开文件的命令</strong></p>
-{% image http://upload-images.jianshu.io/upload_images/1945738-43dee391c6bf6a74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}
+{% image http://upload-images.jianshu.io/upload_images/1945738-43dee391c6bf6a74.png '' '' %}
 <p>基本上 vim 共分为三种模式，分别是命令模式（Command mode），插入模式（Insert mode）和末行模式（Last line mode）。 这三种模式的作用分别是：命令模式、输入模式、末行模式。</p>
-<p><strong>vi/vim三种模式切换</strong><br>{% image http://upload-images.jianshu.io/upload_images/1945738-8a3e2e194c142040.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 'vi/vim三种模式切换' '' %}</p>
+<p><strong>vi/vim三种模式切换</strong><br>{% image http://upload-images.jianshu.io/upload_images/1945738-8a3e2e194c142040.png 'vi/vim三种模式切换' '' %}</p>
 <p><strong>命令模式</strong><br>用户刚刚启动 vi/vim，便进入了命令模式。此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。</p>
 <p>以下是常用的几个命令：<br>i 切换到插入模式，以输入字符。<br>x 删除当前光标所在处的字符。<br>: 切换到底线命令模式，以在最底一行输入命令。</p>
 <p>若想要编辑文本：启动Vim，进入了命令模式，按下i，切换到输入模式。<br>命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令。</p>
-<p>移动光标的位置：<br>{% image http://upload-images.jianshu.io/upload_images/1945738-6ef7c0c3957760d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}</p>
-<p>字符串的复制、删除、粘贴：<br>{% image http://upload-images.jianshu.io/upload_images/1945738-6872cedbde22d898.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}</p>
+<p>移动光标的位置：<br>{% image http://upload-images.jianshu.io/upload_images/1945738-6ef7c0c3957760d3.png '' '' %}</p>
+<p>字符串的复制、删除、粘贴：<br>{% image http://upload-images.jianshu.io/upload_images/1945738-6872cedbde22d898.png '' '' %}</p>
 <p><strong>输入模式</strong><br>在命令模式下按下i、I、a、A、o、O、r和R中的某一个键就进入了输入模式。<br>在输入模式中，可以使用以下按键：<br>字符按键以及Shift组合，输入字符<br>ENTER，回车键，换行<br>BACK SPACE，退格键，删除光标前一个字符<br>DEL，删除键，删除光标后一个字符<br>方向键，在文本中移动光标<br>HOME/END，移动光标到行首/行尾<br>Page Up/Page Down，上/下翻页<br>Insert，切换光标为输入/替换模式，光标将变成竖线/下划线<br>ESC，退出输入模式，切换到命令模式</p>
-{% image http://upload-images.jianshu.io/upload_images/1945738-bd165fe4e4f95459.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}
+{% image http://upload-images.jianshu.io/upload_images/1945738-bd165fe4e4f95459.png '' '' %}
 <p><strong>末行模式</strong><br>在命令模式下按下<code>:</code>（英文冒号）就进入了底线命令模式。<br>末行模式可以输入单个或多个字符的命令，可用的命令非常多。<br>在末行模式中，基本的命令有：<br>：q 退出程序<br>：w 保存文件<br>按ESC键可随时退出底线命令模式。</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://upload-images.jianshu.io/upload_images/1945738-0ee150287b6c2bcd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="">
+                    <img src="http://upload-images.jianshu.io/upload_images/1945738-0ee150287b6c2bcd.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -412,7 +406,7 @@
 </tbody>
 </table>
 <h2 id="Linux-node服务nginx配置"><a href="#Linux-node服务nginx配置" class="headerlink" title="Linux node服务nginx配置"></a>Linux node服务nginx配置</h2><p>前面我们已经正确下载了node环境，这里我们写一个简单的node程序开启一个node服务。</p>
-{% image http://upload-images.jianshu.io/upload_images/1945738-456d2a56f7fcc3f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 '' '' %}
+{% image http://upload-images.jianshu.io/upload_images/1945738-456d2a56f7fcc3f5.png '' '' %}
 <p>使用<code>vim /var/www/index.js</code>在/var/www文件夹下建立一个index.js，起一个最简单的服务。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">const http = require(&apos;http&apos;);</div><div class="line">const server = http.createServer((req, res) =&gt; &#123;</div><div class="line">  res.statusCode = 200;</div><div class="line">  res.setHeader(&apos;Content-Type&apos;, &apos;text/plain&apos;);</div><div class="line">  res.end(&apos;Hello World\n&apos;);</div><div class="line">&#125;);</div><div class="line">server.listen(3000, () =&gt; &#123;</div><div class="line">  console.log(`node server is now running/`);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>nodejs默认端口是3000，需要配置nginx反向代理到nodejs的3000端口。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen       443;</div><div class="line">    server_name  www.domain.com;</div><div class="line">    ssl on;</div><div class="line">    ssl_certificate /usr/share/nginx/conf/1_www.vuenode.com_bundle.crt;</div><div class="line">    ssl_certificate_key /usr/share/nginx/conf/2_www.vuenode.com.key;</div><div class="line">    ssl_session_timeout 5m;</div><div class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</div><div class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</div><div class="line">    ssl_prefer_server_ciphers on;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://127.0.0.1:3000;</div><div class="line">        proxy_http_version 1.1;</div><div class="line">        proxy_set_header Upgrade $http_upgrade;</div><div class="line">        proxy_set_header Connection ‘upgrade’;</div><div class="line">        proxy_set_header Host $host;</div><div class="line">        proxy_cache_bypass $http_upgrade;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>然后重启nginx及打开node服务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">service nginx restart</div><div class="line">node /var/www/index</div></pre></td></tr></table></figure></p>
@@ -425,7 +419,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-05-12T07:03:55.077Z" itemprop="dateUpdated">2017-05-12 15:03:55</time>
+    最后更新时间：<time datetime="2017-05-17T09:13:52.942Z" itemprop="dateUpdated">2017-05-17 17:13:52</time>
 </span><br>
 
 
