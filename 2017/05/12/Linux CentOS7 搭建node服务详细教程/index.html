@@ -27,21 +27,21 @@
     
     
     <meta name="keywords" content="Linux,CentOS7,node.js">
-    <meta name="description" content="前言近期在准备搭建一个vue.js+node.js全栈开发的社区，之前由于没有云服务器搭建经验，这篇文章做一下相关的记录，后续再深入学习研究。本文不局限于只是流水账式子的记录，会顺便说明一下Linux的相关内容。 登录Linux云服务器至于购买云服务的过程在此不做赘述，各大云服务提供商都有相关的说明文档。当我们买好了云主机，可以通过控制面板登录，也可以使用密码从本地登录。 Linux或Mac OS">
+    <meta name="description" content="前言近期在准备搭建一个vue.js+node.js全栈开发的社区，之前由于没有云服务器搭建经验，这篇文章做一下相关的记录，后续再深入学习研究。本文不局限于只是流水账式的记录，会顺便说明一下Linux的相关内容。 登录Linux云服务器至于购买云服务的过程在此不做赘述，各大云服务提供商都有相关的说明文档。当我们买好了云主机，可以通过控制面板登录，也可以使用密码从本地登录。 Linux或Mac OS用">
 <meta name="keywords" content="Linux,CentOS7,node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux CentOS7 搭建node服务详细教程">
 <meta property="og:url" content="https://zhaomenghuan.github.io/2017/05/12/Linux CentOS7 搭建node服务详细教程/index.html">
 <meta property="og:site_name" content="小青年博客">
-<meta property="og:description" content="前言近期在准备搭建一个vue.js+node.js全栈开发的社区，之前由于没有云服务器搭建经验，这篇文章做一下相关的记录，后续再深入学习研究。本文不局限于只是流水账式子的记录，会顺便说明一下Linux的相关内容。 登录Linux云服务器至于购买云服务的过程在此不做赘述，各大云服务提供商都有相关的说明文档。当我们买好了云主机，可以通过控制面板登录，也可以使用密码从本地登录。 Linux或Mac OS">
+<meta property="og:description" content="前言近期在准备搭建一个vue.js+node.js全栈开发的社区，之前由于没有云服务器搭建经验，这篇文章做一下相关的记录，后续再深入学习研究。本文不局限于只是流水账式的记录，会顺便说明一下Linux的相关内容。 登录Linux云服务器至于购买云服务的过程在此不做赘述，各大云服务提供商都有相关的说明文档。当我们买好了云主机，可以通过控制面板登录，也可以使用密码从本地登录。 Linux或Mac OS用">
 <meta property="og:image" content="https://mccdn.qcloud.com/img56a5d38a4ffbc.png">
 <meta property="og:image" content="https://mccdn.qcloud.com/img56a5d47b8b5da.png">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1945738-f6dd3886db0687d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1945738-0ee150287b6c2bcd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-05-12T06:48:01.434Z">
+<meta property="og:updated_time" content="2017-05-12T07:03:55.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux CentOS7 搭建node服务详细教程">
-<meta name="twitter:description" content="前言近期在准备搭建一个vue.js+node.js全栈开发的社区，之前由于没有云服务器搭建经验，这篇文章做一下相关的记录，后续再深入学习研究。本文不局限于只是流水账式子的记录，会顺便说明一下Linux的相关内容。 登录Linux云服务器至于购买云服务的过程在此不做赘述，各大云服务提供商都有相关的说明文档。当我们买好了云主机，可以通过控制面板登录，也可以使用密码从本地登录。 Linux或Mac OS">
+<meta name="twitter:description" content="前言近期在准备搭建一个vue.js+node.js全栈开发的社区，之前由于没有云服务器搭建经验，这篇文章做一下相关的记录，后续再深入学习研究。本文不局限于只是流水账式的记录，会顺便说明一下Linux的相关内容。 登录Linux云服务器至于购买云服务的过程在此不做赘述，各大云服务提供商都有相关的说明文档。当我们买好了云主机，可以通过控制面板登录，也可以使用密码从本地登录。 Linux或Mac OS用">
 <meta name="twitter:image" content="https://mccdn.qcloud.com/img56a5d38a4ffbc.png">
     
         <link rel="alternate" type="application/atom+xml" title="小青年博客" href="/atom.xml">
@@ -207,7 +207,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>近期在准备搭建一个vue.js+node.js全栈开发的社区，之前由于没有云服务器搭建经验，这篇文章做一下相关的记录，后续再深入学习研究。本文不局限于只是流水账式子的记录，会顺便说明一下Linux的相关内容。</p>
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>近期在准备搭建一个vue.js+node.js全栈开发的社区，之前由于没有云服务器搭建经验，这篇文章做一下相关的记录，后续再深入学习研究。本文不局限于只是流水账式的记录，会顺便说明一下Linux的相关内容。</p>
 <h2 id="登录Linux云服务器"><a href="#登录Linux云服务器" class="headerlink" title="登录Linux云服务器"></a>登录Linux云服务器</h2><p>至于购买云服务的过程在此不做赘述，各大云服务提供商都有相关的说明文档。当我们买好了云主机，可以通过控制面板登录，也可以使用密码从本地登录。</p>
 <p>Linux或Mac OS用户登录Linux云服务器，直接使用SSH命令进行连接，如：ssh root@Linux云服务器公网IP，然后输入root用户的初始密码，即可完成登录。</p>
 <p>Window系统上 Linux 远程登录客户端有SecureCRT, Putty, SSH Secure Shell等，本文以Putty为例来登录远程服务器。</p>
@@ -425,7 +425,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-05-12T06:48:01.434Z" itemprop="dateUpdated">2017-05-12 14:48:01</time>
+    最后更新时间：<time datetime="2017-05-12T07:03:55.077Z" itemprop="dateUpdated">2017-05-12 15:03:55</time>
 </span><br>
 
 
@@ -505,7 +505,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/05/17/从0到1搭建webpack2-vue2自定义模板详细教程/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">从0到1搭建webpack2+vue2自定义模板详细教程</h4>
+      </a>
+    </div>
   
 
   
